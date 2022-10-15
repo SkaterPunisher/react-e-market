@@ -1,8 +1,9 @@
 import React from 'react'
+import Goods from '../components/Goods/Goods'
 
 const GoodsPage = () => {
   return (
-    <div className='text-[50px] font-[700]'>GoodsPage</div>
+    <Goods />
   )
 }
 
