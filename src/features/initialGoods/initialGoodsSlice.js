@@ -6,10 +6,21 @@ const initialState = {
   loading: false,
 };
 
+let i = 10
+
 export const getGoods = createAsyncThunk(
   'goods/getGoods',
   async (_, { rejectWithValue, dispatch }) => {
-    const res = await axios.get('http://localhost:3001/products');
+    const res = await axios.get(`http://localhost:3001/products?_start=0&_end=${i}`);
+    dispatch(setGoods(res.data));
+  }
+);
+
+export const getMoreGoods = createAsyncThunk(
+  'goods/getGoods',
+  async (_, { rejectWithValue, dispatch }) => {
+    const res = await axios.get(`http://localhost:3001/products?_start=0&_end=${i + 10}`);
+    i += 10
     dispatch(setGoods(res.data));
   }
 );

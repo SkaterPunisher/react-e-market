@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router';
-import { Layout } from './components/Layout';
+import { Layout } from './components/Layout/Layout';
 import AdminPage from './pages/AdminPage';
 import BasketPage from './pages/BasketPage';
 import EditGoodPage from './pages/EditGoodPage';
