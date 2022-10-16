@@ -21,7 +21,6 @@ export const goodSlice = createSlice({
   reducers: {
     setGood: (state, action) => {
       state.good = action.payload;
-      console.log(action.payload)
     },
   },
   extraReducers: {
@@ -33,6 +32,7 @@ export const goodSlice = createSlice({
     } /* вызывается когда начинаем запрос (вызываем функцию getGood) */,
     [getGood.rejected]: (state) => {
       state.loading = false;
+      alert('Ошибка запроса на 1 товар')
     } /* вызывается когда есть какая то ошибка */,
   },
 });

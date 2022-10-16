@@ -42,6 +42,7 @@ export const initialGoodsSlice = createSlice({
     } /* вызывается когда начинаем запрос (вызываем функцию getGoods) */,
     [getGoods.rejected]: (state) => {
       state.loading = false;
+      alert('Ошибка запроса на товары')
     } /* вызывается когда есть какая то ошибка */,
   },
 });

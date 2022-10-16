@@ -1,11 +1,13 @@
 import { Routes, Route } from 'react-router';
 import { Layout } from './components/Layout/Layout';
+import Privat from './hoc/Privat';
 import AdminPage from './pages/AdminPage';
 import BasketPage from './pages/BasketPage';
 import EditGoodPage from './pages/EditGoodPage';
 import GoodsPage from './pages/GoodsPage';
 import HomePage from './pages/HomePage';
 import LkPage from './pages/LkPage';
+import LoginPage from './pages/LoginPage';
 import NoteFoundPage from './pages/NoteFoundPage';
 import SingleGoods from './pages/SingleGoods';
 
@@ -17,10 +19,25 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path='goods' element={<GoodsPage />} />
           <Route path='goods/:id' element={<SingleGoods />} />
-          <Route path='goods/:id/edit' element={<EditGoodPage />} />
-          <Route path='admin' element={<AdminPage />} />
+          <Route
+            path='goods/:id/edit'
+            element={
+              <Privat>
+                <EditGoodPage />
+              </Privat>
+            }
+          />
+          <Route
+            path='admin'
+            element={
+              <Privat>
+                <AdminPage />
+              </Privat>
+            }
+          />
           <Route path='basket' element={<BasketPage />} />
           <Route path='lk' element={<LkPage />} />
+          <Route path='login' element={<LoginPage />} />
           <Route path='*' element={<NoteFoundPage />} />
         </Route>
       </Routes>
