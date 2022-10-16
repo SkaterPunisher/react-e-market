@@ -6,6 +6,7 @@ import {
   logInAdmin,
   logInCustomer,
 } from '../features/initialUsers/initialUsersSlice';
+import { message } from 'antd';
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -25,26 +26,34 @@ const LoginPage = () => {
     const form = event.target;
     const login = form.userName.value;
     const password = form.userPassword.value;
-    console.log(users);
+
+    const successMessageAdmin = () => {
+      message.success('Вы пошли как администратор');
+    };
+    const successMessageCustomer = () => {
+      message.success('Вы пошли как пользователь');
+    };
+    const errorMessage = () => {
+      message.error('Введите коректный логин и пароль или зарегестрирустесь');
+    };
 
     let user = users.find(
       (item) => item.password === password && item.name === login
     );
     if (user != undefined) {
       if (user.role === 'customer') {
+        successMessageCustomer()
         dispatch(logInCustomer(user));
         navigate(fromPage);
       }
       if (user.role === 'admin') {
+        successMessageAdmin()
         dispatch(logInAdmin(user));
         navigate(fromPage);
       }
+    } else {
+      errorMessage()
     }
-
-    // if (login === users[0].name && password === users[0].password) {
-    //   dispatch(logIn())
-    //   navigate(fromPage)
-    // } else {console.log('Введите корректные данные')}
   };
 
   return (
