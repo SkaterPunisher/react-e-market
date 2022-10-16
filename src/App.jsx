@@ -35,7 +35,14 @@ function App() {
               </Privat>
             }
           />
-          <Route path='basket' element={<BasketPage />} />
+          <Route
+            path='basket'
+            element={
+              <Privat>
+                <BasketPage />
+              </Privat>
+            }
+          />
           <Route
             path='lk'
             element={
