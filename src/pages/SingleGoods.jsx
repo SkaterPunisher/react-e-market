@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { getGood } from '../features/initialGood/goodSlice';
 import { Link } from 'react-router-dom';
+import Spinner from '../ui/Spinner/Spinner';
 
 const SingleGoods = () => {
   const { id } = useParams();
@@ -18,9 +19,7 @@ const SingleGoods = () => {
 
   if (loading) {
     return (
-      <p className='text-Black flex justify-center items-center w-full text-[50px]'>
-        loading...
-      </p>
+      <Spinner />
     );
   }
 

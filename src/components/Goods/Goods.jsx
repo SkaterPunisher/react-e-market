@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getGoods, getMoreGoods } from '../../features/initialGoods/initialGoodsSlice';
 import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom';
+import Spinner from '../../ui/Spinner/Spinner';
 
 const Goods = () => {
   const goods = useSelector((state) => state.initialGoods.goods);
@@ -19,9 +20,7 @@ const Goods = () => {
 
   if (loading) {
     return (
-      <p className='text-Black flex justify-center items-center w-full text-[50px]'>
-        loading...
-      </p>
+      <Spinner />
     );
   }
 
