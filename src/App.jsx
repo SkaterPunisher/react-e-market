@@ -36,7 +36,14 @@ function App() {
             }
           />
           <Route path='basket' element={<BasketPage />} />
-          <Route path='lk' element={<LkPage />} />
+          <Route
+            path='lk'
+            element={
+              <Privat>
+                <LkPage />
+              </Privat>
+            }
+          />
           <Route path='login' element={<LoginPage />} />
           <Route path='*' element={<NoteFoundPage />} />
         </Route>

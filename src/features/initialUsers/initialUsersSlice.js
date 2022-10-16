@@ -3,14 +3,16 @@ import axios from 'axios';
 
 const initialState = {
   users: [],
+  lkUser: [],
   loading: false,
   auth: false,
+  authCustomer: false,
 };
 
 export const getUser = createAsyncThunk(
   'user/getUser',
   async (action, { rejectWithValue, dispatch }) => {
-    const res = await axios.get(`http://localhost:3001/users?role=admin`);
+    const res = await axios.get(`http://localhost:3001/users`);
     dispatch(setUser(res.data));
   }
 );
@@ -22,11 +24,17 @@ export const usersSlice = createSlice({
     setUser: (state, action) => {
       state.users = action.payload;
     },
-    logIn: (state, action) => {
+    logInAdmin: (state, action) => {
       state.auth = true;
+      state.lkUser = action.payload
+    },
+    logInCustomer: (state, action) => {
+      state.authCustomer = true;
+      state.lkUser = action.payload
     },
     logOut: (state, action) => {
       state.auth = false;
+      state.authCustomer = false;
     },
   },
   extraReducers: {
@@ -43,5 +51,5 @@ export const usersSlice = createSlice({
   },
 });
 
-export const { setUser, logIn, logOut } = usersSlice.actions;
+export const { setUser, logInAdmin, logInCustomer, logOut } = usersSlice.actions;
 export default usersSlice.reducer;
