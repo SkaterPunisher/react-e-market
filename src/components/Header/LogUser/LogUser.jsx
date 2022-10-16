@@ -14,7 +14,7 @@ const LogUser = () => {
   const user = useSelector((state) => state.users.lkUser);
 
   const successMessageAdmin = () => {
-    message.success('Вы вышли из профиля');
+    message.success('Вы вышли из профиля', [1]);
   };
 
   const handleClick = () => {

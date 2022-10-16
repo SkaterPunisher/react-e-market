@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk, current } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const initialState = {
@@ -19,9 +19,9 @@ export const getGoods = createAsyncThunk(
 export const getMoreGoods = createAsyncThunk(
   'goods/getGoods',
   async (_, { rejectWithValue, dispatch }) => {
-    const res = await axios.get(`http://localhost:3001/products?_start=0&_end=${i + 10}`);
+    const res = await axios.get(`http://localhost:3001/products?_start=${i}&_end=${i + 10}`);
     i += 10
-    dispatch(setGoods(res.data));
+    dispatch(addGoods(res.data));
   }
 );
 
@@ -31,6 +31,11 @@ export const initialGoodsSlice = createSlice({
   reducers: {
     setGoods: (state, action) => {
       state.goods = action.payload;
+    },
+    addGoods: (state, action) => {
+      action.payload.forEach((item) => {
+        state.goods.push(item)
+      })
     },
   },
   extraReducers: {
@@ -44,8 +49,19 @@ export const initialGoodsSlice = createSlice({
       state.loading = false;
       alert('Ошибка запроса на товары')
     } /* вызывается когда есть какая то ошибка */,
+
+    [getMoreGoods.fulfilled]: (state) => {
+      state.loading = false;
+    } /* вызывается когда запрос прошел успешно */,
+    [getMoreGoods.pending]: (state) => {
+      state.loading = true;
+    } /* вызывается когда начинаем запрос (вызываем функцию getGoods) */,
+    [getMoreGoods.rejected]: (state) => {
+      state.loading = false;
+      alert('Ошибка запроса на добавление товаров')
+    } /* вызывается когда есть какая то ошибка */,
   },
 });
 
-export const { setGoods } = initialGoodsSlice.actions;
+export const { setGoods, addGoods } = initialGoodsSlice.actions;
 export default initialGoodsSlice.reducer;

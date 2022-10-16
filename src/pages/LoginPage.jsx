@@ -7,6 +7,7 @@ import {
   logInCustomer,
 } from '../features/initialUsers/initialUsersSlice';
 import { message } from 'antd';
+import Spinner from '../ui/Spinner/Spinner';
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -28,13 +29,13 @@ const LoginPage = () => {
     const password = form.userPassword.value;
 
     const successMessageAdmin = () => {
-      message.success('Вы пошли как администратор');
+      message.success('Вы пошли как администратор', [1]);
     };
     const successMessageCustomer = () => {
-      message.success('Вы пошли как пользователь');
+      message.success('Вы пошли как пользователь', [1]);
     };
     const errorMessage = () => {
-      message.error('Введите коректный логин и пароль или зарегестрирустесь');
+      message.error('Введите коректный логин и пароль или зарегестрирустесь', [1]);
     };
 
     let user = users.find(
@@ -55,6 +56,10 @@ const LoginPage = () => {
       errorMessage()
     }
   };
+
+  if (loading) {
+    return <Spinner />;
+  }
 
   return (
     <div className='flex justify-center flex-col items-center'>
