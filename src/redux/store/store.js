@@ -18,6 +18,7 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import { goodsApi } from '../goodsApi';
 
 const persistConfig = {
   key: 'root',
@@ -29,6 +30,7 @@ const rootReducer = combineReducers({
   good: goodSlice,
   users: usersSlice,
   addBasket: addInBasket,
+  [goodsApi.reducerPath]: goodsApi.reducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -40,7 +42,7 @@ const store = configureStore({
       serializableCheck: {
         ignoreActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }),
+    }).concat(goodsApi.middleware),
 });
 
 export const persistor = persistStore(store);

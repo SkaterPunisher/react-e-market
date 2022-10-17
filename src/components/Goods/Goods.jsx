@@ -1,27 +1,33 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getGoods } from '../../redux/features/initialGoods/initialGoodsSlice';
+import React, { useEffect, useState } from 'react';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { getGoods } from '../../redux/features/initialGoods/initialGoodsSlice';
 import Spinner from '../../ui/Spinner/Spinner';
 import MoreGoodsBtn from '../../ui/Button/MoreGoodsBtn/MoreGoodsBtn';
 import OneGood from './OneGood/OneGood';
+import { useGetGoodsQuery } from '../../redux/goodsApi';
 
 const Goods = () => {
-  const loading = useSelector((state) => state.initialGoods.loading);
-  const dispatch = useDispatch();
+  // const loading = useSelector((state) => state.initialGoods.loading);
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getGoods());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(getGoods());
+  // }, []);
 
-  if (loading) {
-    return <Spinner />;
-  }
+  const [limit, setLimit] = useState(10);
+  const { data = [], isLoading } = useGetGoodsQuery(limit);
+
+  const onClick = () => {
+    setLimit((prev) => prev + 10);
+  };
+
+  if (isLoading) return <Spinner />;
 
   return (
     <>
-      <OneGood />
+      <OneGood data={data} />
       <div className='text-center'>
-        <MoreGoodsBtn />
+        <MoreGoodsBtn onClick={onClick} />
       </div>
     </>
   );
