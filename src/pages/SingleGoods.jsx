@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
-import { getGood } from '../features/initialGood/goodSlice';
+import { getGood } from '../redux/features/initialGood/goodSlice';
 import { Link } from 'react-router-dom';
 import Spinner from '../ui/Spinner/Spinner';
 

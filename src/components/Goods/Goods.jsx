@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getGoods } from '../../features/initialGoods/initialGoodsSlice';
+import { getGoods } from '../../redux/features/initialGoods/initialGoodsSlice';
 import Spinner from '../../ui/Spinner/Spinner';
 import MoreGoodsBtn from '../../ui/Button/MoreGoodsBtn/MoreGoodsBtn';
 import AddCardBtn from '../../ui/Button/AddCardBtn/AddCardBtn';

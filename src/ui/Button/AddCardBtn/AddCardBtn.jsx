@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { message } from 'antd';
-import { add, addBasket } from '../../../features/addInBasket/addInBasket';
+import { add, addBasket } from '../../../redux/features/addInBasket/addInBasket';
 
 const AddCardBtn = ({ text, id, goods }) => {
   const dispatch = useDispatch()

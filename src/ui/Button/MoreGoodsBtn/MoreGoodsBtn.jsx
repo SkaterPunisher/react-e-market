@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { getMoreGoods } from '../../../features/initialGoods/initialGoodsSlice';
+import { getMoreGoods } from '../../../redux/features/initialGoods/initialGoodsSlice';
 
 const MoreGoodsBtn = () => {
   const dispatch = useDispatch();
