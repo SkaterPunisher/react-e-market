@@ -3543,9 +3543,13 @@
       "role": "customer",
       "avatar": "https://api.lorem.space/image/face?w=640&h=480&r=174",
       "basket": {
-        "id": 13,
-        "col": 1,
-        "sum": 515
+        "item": [
+          {
+            "id": 15,
+            "col": 1,
+            "sum": 719
+          }
+        ]
       }
     },
     {
@@ -3555,7 +3559,9 @@
       "name": "Maria",
       "role": "customer",
       "avatar": "https://api.lorem.space/image/face?w=640&h=480&r=4919",
-      "basket": []
+      "basket": {
+        "item": []
+      }
     },
     {
       "id": 3,
@@ -3564,7 +3570,9 @@
       "name": "Admin",
       "role": "admin",
       "avatar": "https://api.lorem.space/image/face?w=640&h=480&r=8037",
-      "basket": []
+      "basket": {
+        "item": []
+      }
     }
   ]
 }

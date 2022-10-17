@@ -2,8 +2,15 @@ import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom';
 import AddCardBtn from '../../../ui/Button/AddCardBtn/AddCardBtn';
+import { useSelector } from 'react-redux';
 
 const OneGood = ({ data }) => {
+  const user = useSelector((state) => state.users.lkUser);
+  const findGoodsInUser = (user, id) => {
+    // let result = user.basket.find(item => )
+}
+
+  // console.log(user.basket);
   return (
     <div className='p-4 flex flex-wrap gap-4 justify-center '>
       {data?.map((item) => {
@@ -22,6 +29,7 @@ const OneGood = ({ data }) => {
                 <h2 className='m-0 text-[15px] font-bold'>
                   {price} <span className='m-0'>₽</span>
                 </h2>
+
                 <AddCardBtn text={'В корзину'} id={id} goods={item} />
               </div>
             </div>
