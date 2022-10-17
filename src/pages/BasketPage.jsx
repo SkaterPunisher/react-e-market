@@ -1,20 +1,21 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { useGetSingleUserQuery } from '../redux/goodsApi';
+import { useGetUsersQuery } from '../redux/goodsApi';
 import Spinner from '../ui/Spinner/Spinner';
 import { v4 as uuidv4 } from 'uuid';
 
 const BasketPage = () => {
   const user = useSelector((state) => state.users.lkUser);
 
-  const { data = [], isLoading } = useGetSingleUserQuery(user.id);
+  const { data = [], isLoading } = useGetUsersQuery(user.id);
+  let result = data.find((item) => item.id == user.id)
 
   if (isLoading) return <Spinner />;
 
   return (
     <div>
       <h1 className='text-[30px] font-[700]'>Товары в корзине</h1>
-      {data.basket.item?.map((item) => {
+      {result.basket.item?.map((item) => {
         const { id, col, sum } = item;
         return (
           <div className='border-2 border-black' key={uuidv4()}>

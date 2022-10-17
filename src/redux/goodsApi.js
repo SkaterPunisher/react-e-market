@@ -14,21 +14,25 @@ export const goodsApi = createApi({
   tagTypes: ['Goods', 'User'],
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3001/' }),
   endpoints: (build) => ({
+
     getGoods: build.query({
       query: (limit) => `/products?_start=0&_end=${limit}`,
       providesTags: (result) => providesList(result, 'Goods')
     }),
+
     getSingleGoods: build.query({
       query: (id) => `/products/${id}`,
     }),
+
     getUsers: build.query({
       query: () => `/users`,
       providesTags: (result) => providesList(result, 'User')
     }),
+
     getSingleUser: build.query({
       query: (id) => `/users/${id}`,
-      providesTags: (result) => providesList(result, 'User')
     }),
+
     addGoodsInBasket: build.mutation({
       query: (body) => ({
         url: `/users/${body.id}`,
@@ -39,8 +43,9 @@ export const goodsApi = createApi({
           },
         },
       }),
-      invalidatesTags: [{type: 'User', id: 'LIST'}]
+      invalidatesTags: ['User']
     }),
+
   }),
 });
 
