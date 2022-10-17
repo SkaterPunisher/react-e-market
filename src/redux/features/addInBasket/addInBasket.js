@@ -18,14 +18,14 @@ export const addInBasket = createSlice({
           sum: goods.price,
         },
       ];
-
       axios({
-          method: 'patch',
-          url: `http://localhost:3001/users/${user.id}`,
-          data: {
-            basket: basket
-          },
-        });
+        method: 'patch',
+        url: `http://localhost:3001/users/${user.id}`,
+        data: {
+          basket: basket,
+        },
+      });
+      
     },
   },
 });

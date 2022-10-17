@@ -1,10 +1,9 @@
 import React from 'react';
 import { message } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
-import { logOut } from '../../../features/initialUsers/initialUsersSlice';
+import { logOut } from '../../../redux/features/initialUsers/initialUsersSlice';
 import { ImExit, ImEnter } from 'react-icons/im';
 import { Link } from 'react-router-dom';
-import CustomLink from '../../CustomLink/CustomLink';
 import { HiOutlineShoppingCart } from "react-icons/hi";
 
 const LogUser = () => {

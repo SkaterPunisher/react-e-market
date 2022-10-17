@@ -5,7 +5,7 @@ import {
   getUser,
   logInAdmin,
   logInCustomer,
-} from '../features/initialUsers/initialUsersSlice';
+} from '../redux/features/initialUsers/initialUsersSlice';
 import { message } from 'antd';
 import Spinner from '../ui/Spinner/Spinner';
 

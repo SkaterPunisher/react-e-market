@@ -3542,7 +3542,13 @@
       "name": "Jhon",
       "role": "customer",
       "avatar": "https://api.lorem.space/image/face?w=640&h=480&r=174",
-      "basket": []
+      "basket": [
+        {
+          "id": 27,
+          "col": 1,
+          "sum": 114
+        }
+      ]
     },
     {
       "id": 2,
@@ -3562,9 +3568,9 @@
       "avatar": "https://api.lorem.space/image/face?w=640&h=480&r=8037",
       "basket": [
         {
-          "id": 11,
+          "id": 16,
           "col": 1,
-          "sum": 962
+          "sum": 783
         }
       ]
     }

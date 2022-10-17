@@ -6,7 +6,7 @@ import AddCardBtn from '../../../ui/Button/AddCardBtn/AddCardBtn';
 
 const OneGood = () => {
     const goods = useSelector((state) => state.initialGoods.goods);
-    const user = useSelector((state) => state.iniialUsers.lkUser)
+    // const user = useSelector((state) => state.initialUsers.lkUser)
 
   return (
     <div className='p-4 flex flex-wrap gap-4 justify-center '>
