@@ -1,21 +1,11 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  users: [],
   lkUser: [],
   loading: false,
   auth: false,
   authCustomer: false,
 };
-
-export const getUser = createAsyncThunk(
-  'user/getUser',
-  async (action, { rejectWithValue, dispatch }) => {
-    const res = await axios.get(`http://localhost:3001/users`);
-    dispatch(setUser(res.data));
-  }
-);
 
 export const usersSlice = createSlice({
   name: 'users',
@@ -35,20 +25,10 @@ export const usersSlice = createSlice({
     logOut: (state, action) => {
       state.auth = false;
       state.authCustomer = false;
+      state.lkUser = []
     },
   },
-  extraReducers: {
-    [getUser.fulfilled]: (state) => {
-      state.loading = false;
-    } /* вызывается когда запрос прошел успешно */,
-    [getUser.pending]: (state) => {
-      state.loading = true;
-    } /* вызывается когда начинаем запрос (вызываем функцию getGood) */,
-    [getUser.rejected]: (state) => {
-      state.loading = false;
-      alert('Ошибка запроса на пользователей');
-    } /* вызывается когда есть какая то ошибка */,
-  },
+  extraReducers: {},
 });
 
 export const { setUser, logInAdmin, logInCustomer, logOut } = usersSlice.actions;

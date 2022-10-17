@@ -1,24 +1,22 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+
+import { useDispatch } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router';
 import {
-  getUser,
   logInAdmin,
   logInCustomer,
 } from '../redux/features/initialUsers/initialUsersSlice';
 import { message } from 'antd';
 import Spinner from '../ui/Spinner/Spinner';
+import { useGetUsersQuery } from '../redux/goodsApi';
+import FormLogin from '../components/FormLogin/FormLogin';
 
 const LoginPage = () => {
+  const { data = [], isLoading } = useGetUsersQuery();
   const navigate = useNavigate();
-  const location = useLocation();
-  const users = useSelector((state) => state.users.users);
-  const loading = useSelector((state) => state.users.loading);
+  const location = useLocation(); 
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getUser());
-  }, []);
+  const users = data;
 
   const fromPage = location.state?.from?.pathname || '/';
 
@@ -57,26 +55,12 @@ const LoginPage = () => {
     }
   };
 
-  if (loading) {
+  if (isLoading) {
     return <Spinner />;
   }
 
   return (
-    <div className='flex justify-center flex-col items-center'>
-      <h1>Регистация и вход</h1>
-      <form
-        onSubmit={handleSubmit}
-        className=' px-6 py-4 flex flex-col bg-slate-100 max-w-[500px]'
-      >
-        <label>
-          Login: <input name='userName' />
-        </label>
-        <label>
-          Password: <input name='userPassword' />
-        </label>
-        <button type='submit'>Войти</button>
-      </form>
-    </div>
+    <FormLogin onSubmit={handleSubmit} />
   );
 };
 

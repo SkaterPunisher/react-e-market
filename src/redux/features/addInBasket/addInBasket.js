@@ -12,7 +12,7 @@ export const addInBasket = createSlice({
       let id = action.payload.id;
       let goods = action.payload.goods;
       let basket = [
-        {
+        { 
           id: id,
           col: 1,
           sum: goods.price,

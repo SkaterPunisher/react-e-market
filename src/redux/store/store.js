@@ -4,7 +4,6 @@ import {
   getDefaultMiddleware,
 } from '@reduxjs/toolkit';
 import addInBasket from '../features/addInBasket/addInBasket';
-import goodSlice from '../features/initialGood/goodSlice';
 import initialGoodsSlice from '../features/initialGoods/initialGoodsSlice';
 import usersSlice from '../features/initialUsers/initialUsersSlice';
 import {
@@ -27,7 +26,6 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   initialGoods: initialGoodsSlice,
-  good: goodSlice,
   users: usersSlice,
   addBasket: addInBasket,
   [goodsApi.reducerPath]: goodsApi.reducer,

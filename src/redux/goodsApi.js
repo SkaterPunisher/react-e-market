@@ -7,9 +7,24 @@ export const goodsApi = createApi({
     getGoods: build.query({
       query: (limit) => `/products?_start=0&_end=${limit}`,
     }),
+    getSingleGoods: build.query({
+      query: (id) => `/products/${id}`,
+    }),
+    getUsers: build.query({
+      query: () => `/users`,
+    }),
+    addGoodsInBasket: build.mutation({
+      query: (body) => ({
+        url: `/users/${body.id}`,
+        method: 'PATCH',
+        body: {
+          basket: body.data
+        }
+      })
+    })
   }),
 });
 
-export const { useGetGoodsQuery } = goodsApi 
+export const { useGetGoodsQuery, useGetSingleGoodsQuery, useGetUsersQuery, useAddGoodsInBasketMutation } = goodsApi 
 
 
