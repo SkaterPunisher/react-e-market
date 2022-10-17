@@ -22,9 +22,9 @@ export const addInBasket = createSlice({
         let user = action.payload.user
         let goods = action.payload.goods
         let item = user.basket.item
-        item.push(goods)
 
-        console.log(item)
+
+        console.log(id)
 
         // axios({
         //     method: 'patch',
