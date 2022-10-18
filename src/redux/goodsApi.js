@@ -54,6 +54,20 @@ export const goodsApi = createApi({
       invalidatesTags: [{type: 'User'}]
     }),
 
+    removeGoodsInBasket: build.mutation({
+      query: (body) => ({
+        url: `/users/${body.id}`,
+        method: 'PATCH',
+        body: {
+          basket: {
+            item: body.data,
+          },
+        },
+      }),
+      // invalidatesTags: (result, error, arg) => [{type: 'User', id: arg.id}]
+      invalidatesTags: [{type: 'User'}]
+    }),
+
   }),
 });
 
@@ -63,4 +77,5 @@ export const {
   useGetUsersQuery,
   useGetSingleUserQuery,
   useAddGoodsInBasketMutation,
+  useRemoveGoodsInBasketMutation,
 } = goodsApi;

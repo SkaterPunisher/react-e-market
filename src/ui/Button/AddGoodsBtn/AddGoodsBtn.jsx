@@ -1,28 +1,21 @@
-import React, { useState } from 'react';
+
 import { useSelector } from 'react-redux';
 import { message } from 'antd';
 import {
   useAddGoodsInBasketMutation,
-  useGetUsersQuery,
+  useGetUsersQuery, 
 } from '../../../redux/goodsApi';
 import Spinner from '../../Spinner/Spinner';
 import { Link } from 'react-router-dom';
 import { HiArrowDown, HiOutlineShoppingCart } from 'react-icons/hi';
 
-const AddCardBtn = ({ text, id, goods }) => {
-  // let finish = undefined;
+const AddGoodsBtn = ({ text, id, goods }) => {
   const auth = useSelector((state) => state.users.auth);
   const authCustomer = useSelector((state) => state.users.authCustomer);
   const user = useSelector((state) => state.users.lkUser);
 
   const { data = [] } = useGetUsersQuery(user.id);
   let result = data.find((item) => item.id == user.id);
-
-  // if (result == undefined) {
-  //   let finish = undefined;
-  // } else {
-  //   let finish = result.basket.item?.find((item) => item.id == goods.id);
-  // }
 
   const [addProductInBasket, { isLoading }] = useAddGoodsInBasketMutation();
 
@@ -42,31 +35,31 @@ const AddCardBtn = ({ text, id, goods }) => {
     }
     if (auth != false || authCustomer != false) {
       let userTaget = data.find((item) => item.id == user.id);
-      let productNumber = userTaget.basket.item.find(item => item.id == goods.id);
+      let productNumber = userTaget.basket.item.find(
+        (item) => item.id == goods.id
+      );
       if (productNumber === undefined) {
         successAdd();
         let result = {
           id: goods.id,
+          title: goods.title,
+          img: goods.images[0],
+          price: goods.price,
           col: 1,
-          sum: goods.price,
         };
-        let previosItems = userTaget.basket.item
-        console.log(previosItems)
-        let arr = []
-        previosItems.forEach(item => {
-          arr.push(item)
+        let previosItems = userTaget.basket.item;
+        let arr = [];
+        previosItems.forEach((item) => {
+          arr.push(item);
         });
-        arr.push(result)
-        console.log(arr)
+        arr.push(result);
         await addProductInBasket({
           id: userTaget.id,
           data: arr,
         }).unwrap();
       } else {
-        alreadyInBasket()
+        alreadyInBasket();
       }
-
-      
     }
   };
 
@@ -100,4 +93,4 @@ const AddCardBtn = ({ text, id, goods }) => {
   // );
 };
 
-export default AddCardBtn;
+export default AddGoodsBtn;
