@@ -31,6 +31,13 @@ export const goodsApi = createApi({
 
     getSingleUser: build.query({
       query: (id) => `/users/${id}`,
+      providesTags: (result) =>
+        result
+          ? [
+              result,
+              { type: 'User' },
+            ]
+          : [{ type: 'User' }],
     }),
 
     addGoodsInBasket: build.mutation({
@@ -43,7 +50,8 @@ export const goodsApi = createApi({
           },
         },
       }),
-      invalidatesTags: ['User']
+      // invalidatesTags: (result, error, arg) => [{type: 'User', id: arg.id}]
+      invalidatesTags: [{type: 'User'}]
     }),
 
   }),

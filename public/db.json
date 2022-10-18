@@ -3542,7 +3542,10 @@
             "name": "Jhon",
             "role": "customer",
             "avatar": "https://api.lorem.space/image/face?w=640&h=480&r=174",
-            "basket": []
+            "basket": {
+              "item": [],
+              "Generalsum": 0
+            }
           },
           {
             "id": 2,
@@ -3551,7 +3554,10 @@
             "name": "Maria",
             "role": "customer",
             "avatar": "https://api.lorem.space/image/face?w=640&h=480&r=4919",
-            "basket": []
+            "basket": {
+              "item": [],
+              "Generalsum": 0
+            }
           },
           {
             "id": 3,
@@ -3560,7 +3566,10 @@
             "name": "Admin",
             "role": "admin",
             "avatar": "https://api.lorem.space/image/face?w=640&h=480&r=8037",
-            "basket": []
+            "basket": {
+              "item": [],
+              "Generalsum": 0
+            }
           }
     ]
 }
