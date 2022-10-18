@@ -19,9 +19,9 @@ const BasketItem = ({ id, title, price, img, col }) => {
       </div>
       <div className='flex items-center'>
         <div className='flex items-center'>
-          <DecrementGoodsBtn />
+          <DecrementGoodsBtn id={id}/>
           <h2 className='m-0 p-0 mr-2'>{col}</h2>
-          <IncrementGoodsBtn />
+          <IncrementGoodsBtn id={id}/>
         </div>
         <RemoveGoodsBtn id={id}/>
       </div>

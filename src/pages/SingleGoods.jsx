@@ -11,7 +11,7 @@ const SingleGoods = () => {
   const auth = useSelector((state) => state.users.auth);
 
   const { data = [], isLoading } = useGetSingleGoodsQuery(id);
-  const { title, price } = data;
+  const { title, price, images, description } = data;
 
   if (isLoading) return <Spinner />;
 
@@ -23,6 +23,7 @@ const SingleGoods = () => {
         Вернуться назад
       </button>
       <div>
+      <img src={images[0]} alt={title} className='w-[500px] h-[500px] object-cover'/>
         {id}, {title}, {price},
       </div>
 

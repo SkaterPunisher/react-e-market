@@ -66,7 +66,20 @@ export const goodsApi = createApi({
           GeneralsumInBasket: body.sum
         },
       }),
-      // invalidatesTags: (result, error, arg) => [{type: 'User', id: arg.id}]
+      invalidatesTags: [{type: 'User'}]
+    }),
+
+    incrementGoodsInBasket: build.mutation({
+      query: (body) => ({
+        url: `/users/${body.idUser}`,
+        method: 'PATCH',
+        body: {
+          basket: {
+            item: body.item,
+          },
+          GeneralsumInBasket: body.generalSum
+        },
+      }),
       invalidatesTags: [{type: 'User'}]
     }),
 
@@ -80,4 +93,5 @@ export const {
   useGetSingleUserQuery,
   useAddGoodsInBasketMutation,
   useRemoveGoodsInBasketMutation,
+  useIncrementGoodsInBasketMutation,
 } = goodsApi;

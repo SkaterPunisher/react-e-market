@@ -3543,9 +3543,18 @@
       "role": "customer",
       "avatar": "https://api.lorem.space/image/face?w=640&h=480&r=174",
       "basket": {
-        "item": []
+        "item": [
+          {
+            "id": 9,
+            "title": "Handmade Metal Pizza",
+            "img": "https://api.lorem.space/image/watch?w=640&h=480&r=2885",
+            "price": 793,
+            "col": 5
+          }
+        ]
       },
-      "GeneralsumInBasket": 0
+      "GeneralsumInBasket": 3965,
+      "history": []
     },
     {
       "id": 2,
@@ -3557,7 +3566,8 @@
       "basket": {
         "item": []
       },
-      "GeneralsumInBasket": 0
+      "GeneralsumInBasket": 0,
+      "history": []
     },
     {
       "id": 3,
@@ -3569,7 +3579,8 @@
       "basket": {
         "item": []
       },
-      "GeneralsumInBasket": 0
+      "GeneralsumInBasket": 0,
+      "history": []
     }
   ]
 }

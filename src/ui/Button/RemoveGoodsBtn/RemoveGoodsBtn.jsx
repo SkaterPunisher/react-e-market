@@ -22,7 +22,8 @@ const RemoveGoodsBtn = ({ id }) => {
     let result = data.basket.item.filter((item) => item.id != id);
     let targetGoods = data.basket.item.filter((item) => item.id == id)
     console.log(targetGoods)
-    let sum = data.GeneralsumInBasket - targetGoods[0].price
+    let sum = data.GeneralsumInBasket - (targetGoods[0].price * targetGoods[0].col)
+    successRemove()
     await RemoveProductInBasket({
       id: data.id,
       data: result,
