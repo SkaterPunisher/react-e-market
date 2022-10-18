@@ -48,6 +48,7 @@ export const goodsApi = createApi({
           basket: {
             item: body.data,
           },
+          GeneralsumInBasket: body.sum
         },
       }),
       // invalidatesTags: (result, error, arg) => [{type: 'User', id: arg.id}]
@@ -62,6 +63,7 @@ export const goodsApi = createApi({
           basket: {
             item: body.data,
           },
+          GeneralsumInBasket: body.sum
         },
       }),
       // invalidatesTags: (result, error, arg) => [{type: 'User', id: arg.id}]

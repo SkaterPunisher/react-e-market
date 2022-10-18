@@ -15,7 +15,7 @@ const BasketPage = () => {
 
   return (
     <div>
-      <h1 className='text-[30px] font-[700]'>Товары в корзине</h1>
+      <h1 className='text-[30px] font-[700]'>Товары в корзине на сумму: {result.GeneralsumInBasket} ₽</h1>
       {result.basket.item?.map((item) => {
         const { id, title, price, img, col } = item;
         return (

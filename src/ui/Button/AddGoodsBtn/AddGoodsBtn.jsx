@@ -53,9 +53,11 @@ const AddGoodsBtn = ({ text, id, goods }) => {
           arr.push(item);
         });
         arr.push(result);
+        let generalSum = userTaget.GeneralsumInBasket + goods.price
         await addProductInBasket({
           id: userTaget.id,
           data: arr,
+          sum: generalSum,
         }).unwrap();
       } else {
         alreadyInBasket();

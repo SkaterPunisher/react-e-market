@@ -20,10 +20,13 @@ const RemoveGoodsBtn = ({ id }) => {
 
   const handleRemoveGoodsOnBasket = async () => {
     let result = data.basket.item.filter((item) => item.id != id);
-    console.log(result);
+    let targetGoods = data.basket.item.filter((item) => item.id == id)
+    console.log(targetGoods)
+    let sum = data.GeneralsumInBasket - targetGoods[0].price
     await RemoveProductInBasket({
       id: data.id,
       data: result,
+      sum: sum
     }).unwrap();
   };
 

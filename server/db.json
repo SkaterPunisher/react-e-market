@@ -3543,9 +3543,9 @@
       "role": "customer",
       "avatar": "https://api.lorem.space/image/face?w=640&h=480&r=174",
       "basket": {
-        "item": [],
-        "Generalsum": 0
-      }
+        "item": []
+      },
+      "GeneralsumInBasket": 0
     },
     {
       "id": 2,
@@ -3555,9 +3555,9 @@
       "role": "customer",
       "avatar": "https://api.lorem.space/image/face?w=640&h=480&r=4919",
       "basket": {
-        "item": [],
-        "Generalsum": 0
-      }
+        "item": []
+      },
+      "GeneralsumInBasket": 0
     },
     {
       "id": 3,
@@ -3567,44 +3567,9 @@
       "role": "admin",
       "avatar": "https://api.lorem.space/image/face?w=640&h=480&r=8037",
       "basket": {
-        "item": [
-          {
-            "id": 14,
-            "title": "Handcrafted Fresh Tuna",
-            "img": "https://api.lorem.space/image/shoes?w=640&h=480&r=7668",
-            "price": 689,
-            "col": 1
-          },
-          {
-            "id": 9,
-            "title": "Handmade Metal Pizza",
-            "img": "https://api.lorem.space/image/watch?w=640&h=480&r=2885",
-            "price": 793,
-            "col": 1
-          },
-          {
-            "id": 13,
-            "title": "Sleek Cotton Pizza",
-            "img": "https://api.lorem.space/image/watch?w=640&h=480&r=7842",
-            "price": 515,
-            "col": 1
-          },
-          {
-            "id": 10,
-            "title": "Small Concrete Cheese",
-            "img": "https://api.lorem.space/image?w=640&h=480&r=8265",
-            "price": 957,
-            "col": 1
-          },
-          {
-            "id": 8,
-            "title": "Generic Granite Chicken",
-            "img": "https://api.lorem.space/image/furniture?w=640&h=480&r=4053",
-            "price": 20000,
-            "col": 1
-          }
-        ]
-      }
+        "item": []
+      },
+      "GeneralsumInBasket": 0
     }
   ]
 }
