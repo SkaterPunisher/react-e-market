@@ -9,8 +9,8 @@ import {
 import Spinner from '../../Spinner/Spinner';
 
 const DecrementGoodsBtn = ({ id }) => {
-  const successAdd = () => {
-    message.success('-1', [1]);
+  const successRemove = () => {
+    message.success('Товар успешно удален!', [1]);
   };
   const user = useSelector((state) => state.users.lkUser);
   let { data = [] } = useGetSingleUserQuery(user.id);
@@ -18,8 +18,7 @@ const DecrementGoodsBtn = ({ id }) => {
   const [addProductInBasket, { isLoading }] =
     useIncrementGoodsInBasketMutation();
 
-  const [RemoveProductInBasket] =
-    useRemoveGoodsInBasketMutation();
+  const [RemoveProductInBasket] = useRemoveGoodsInBasketMutation();
 
   const handleDecrementColGoodsInBasket = async () => {
     let indexItem = data.basket.item.findIndex((item) => item.id == id);
@@ -34,7 +33,7 @@ const DecrementGoodsBtn = ({ id }) => {
       newBasketUser.splice(indexItem, 0, targetGoods);
 
       let generalSum = data.GeneralsumInBasket - targetGoods.price;
-      successAdd();
+      successRemove();
 
       await addProductInBasket({
         idUser: user.id,
@@ -47,6 +46,7 @@ const DecrementGoodsBtn = ({ id }) => {
       console.log(targetGoods);
       let sum =
         data.GeneralsumInBasket - targetGoods[0].price * targetGoods[0].col;
+      successRemove();
       await RemoveProductInBasket({
         id: data.id,
         data: result,
