@@ -1,4 +1,6 @@
 import { Routes, Route } from 'react-router';
+import AboutUser from './components/AboutUser/AboutUser';
+import HistoryUser from './components/HistoryUser/HistoryUser';
 import { Layout } from './components/Layout/Layout';
 import Privat from './hoc/Privat';
 import PrivatAdmin from './hoc/PrivatAdmin';
@@ -40,10 +42,12 @@ function App() {
             path='basket'
             element={
               <Privat>
-                <BasketPage />
+                {' '}
+                <BasketPage />{' '}
               </Privat>
             }
           />
+
           <Route
             path='lk'
             element={
@@ -51,7 +55,10 @@ function App() {
                 <LkPage />
               </Privat>
             }
-          />
+          >
+            <Route path='history' element={<HistoryUser />} />
+            <Route path='about' element={<AboutUser />} />
+          </Route>
           <Route path='login' element={<LoginPage />} />
           <Route path='*' element={<NoteFoundPage />} />
         </Route>
