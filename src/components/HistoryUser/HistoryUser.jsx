@@ -1,9 +1,21 @@
-import React from 'react'
+import React from 'react';
 
-const HistoryUser = () => {
+const HistoryUser = ({ data }) => {
+  const { history } = data;
+  let arr = [];
+  for (let key in data.history) {
+    arr.push({
+      [key]: data.history[key],
+    });
+  }
+  console.log(history);
+
   return (
-    <div>HistoryUser</div>
-  )
-}
+    <div className='min-h-[250px] p-6'>
+      <div>Колличество товаров в корзине: {data.basket.item.length}</div>
 
-export default HistoryUser
+    </div>
+  );
+};
+
+export default HistoryUser;

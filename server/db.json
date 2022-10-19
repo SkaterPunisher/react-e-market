@@ -3578,6 +3578,38 @@
             "price": 20000,
             "col": 9
           }
+        },
+        "Wed Oct 19 2022 18:10:13 GMT+0300 (Москва, стандартное время)": {
+          "0": {
+            "id": 9,
+            "title": "Handmade Metal Pizza",
+            "img": "https://api.lorem.space/image/watch?w=640&h=480&r=2885",
+            "price": 793,
+            "col": 1
+          },
+          "1": {
+            "id": 10,
+            "title": "Small Concrete Cheese",
+            "img": "https://api.lorem.space/image?w=640&h=480&r=8265",
+            "price": 957,
+            "col": 1
+          }
+        },
+        "Wed Oct 19 2022 18:19:35 GMT+0300 (Москва, стандартное время)": {
+          "0": {
+            "id": 14,
+            "title": "Handcrafted Fresh Tuna",
+            "img": "https://api.lorem.space/image/shoes?w=640&h=480&r=7668",
+            "price": 689,
+            "col": 1
+          },
+          "1": {
+            "id": 15,
+            "title": "Ergonomic Fresh Gloves",
+            "img": "https://api.lorem.space/image/furniture?w=640&h=480&r=5521",
+            "price": 719,
+            "col": 1
+          }
         }
       }
     },

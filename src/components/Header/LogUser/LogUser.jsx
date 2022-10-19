@@ -35,7 +35,7 @@ const LogUser = () => {
       {auth || authCustomer ? (
         <>
           <Link to='/basket'><HiOutlineShoppingCart className='mr-6 w-[25px] h-[25px] text-gray-300 hover:text-white duration-300'/></Link>
-          <Link to='/lk'>
+          <Link to='/lk/about'>
             <img
               src={user.avatar}
               alt='avatar'
