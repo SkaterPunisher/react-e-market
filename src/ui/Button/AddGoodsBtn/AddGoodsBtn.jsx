@@ -1,13 +1,12 @@
-
 import { useSelector } from 'react-redux';
 import { message } from 'antd';
 import {
   useAddGoodsInBasketMutation,
-  useGetUsersQuery, 
+  useGetUsersQuery,
 } from '../../../redux/goodsApi';
 import Spinner from '../../Spinner/Spinner';
 import { Link } from 'react-router-dom';
-import { HiArrowDown, HiOutlineShoppingCart } from 'react-icons/hi';
+import { HiOutlineShoppingCart } from 'react-icons/hi';
 
 const AddGoodsBtn = ({ text, id, goods }) => {
   const auth = useSelector((state) => state.users.auth);
@@ -16,6 +15,7 @@ const AddGoodsBtn = ({ text, id, goods }) => {
 
   const { data = [] } = useGetUsersQuery(user.id);
   let result = data.find((item) => item.id == user.id);
+  console.log(data);
 
   const [addProductInBasket, { isLoading }] = useAddGoodsInBasketMutation();
 
@@ -53,7 +53,7 @@ const AddGoodsBtn = ({ text, id, goods }) => {
           arr.push(item);
         });
         arr.push(result);
-        let generalSum = userTaget.GeneralsumInBasket + goods.price
+        let generalSum = userTaget.GeneralsumInBasket + goods.price;
         await addProductInBasket({
           id: userTaget.id,
           data: arr,

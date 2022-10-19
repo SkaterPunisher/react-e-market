@@ -4,6 +4,7 @@ import { useGetUsersQuery } from '../redux/goodsApi';
 import Spinner from '../ui/Spinner/Spinner';
 import { v4 as uuidv4 } from 'uuid';
 import BasketItem from '../components/BasketItem/BasketItem';
+import ConfirmDilivery from '../ui/Button/ConfirmDilivery/ConfirmDilivery';
 
 const BasketPage = () => {
   const user = useSelector((state) => state.users.lkUser);
@@ -22,6 +23,7 @@ const BasketPage = () => {
           <BasketItem key={uuidv4()} id={id} title={title} price={price} img={img} col={col}/>
         );
       })}
+      {result.GeneralsumInBasket > 0 ? <ConfirmDilivery result={result}/> : ''}
     </div>
   );
 };

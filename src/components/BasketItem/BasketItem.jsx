@@ -1,30 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import DecrementGoodsBtn from '../../ui/Button/DecrementGoodsBtn/DecrementGoodsBtn';
 import IncrementGoodsBtn from '../../ui/Button/IncrementGoodsBtn/IncrementGoodsBtn';
 import RemoveGoodsBtn from '../../ui/Button/RemoveGoodsBtn/RemoveGoodsBtn';
+import MainBasketItem from './MainBasketItem/MainBasketItem';
 
 const BasketItem = ({ id, title, price, img, col }) => {
   return (
     <div className='flex mb-4 last:mb-0 border-2 border-black justify-between px-6 py-4'>
-      <Link
-        to={`/goods/${id}`}
-        state={{
-          adres: '/basket'
-        }}
-      >
-        <div className='flex items-center '>
-          <img
-            src={img}
-            alt={title}
-            className='h-[100px] w-[100px] object-cover mr-10'
-          />
-          <div>
-            <h2>{title}</h2>
-            <h2>{price} ₽</h2>
-          </div>
-        </div>
-      </Link>
+      <MainBasketItem id={id} img={img} title={title} price={price} />
       <div className='flex items-center'>
         <div className='flex items-center'>
           <DecrementGoodsBtn id={id} />
