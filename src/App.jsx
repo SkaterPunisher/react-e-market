@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router';
 import { Layout } from './components/Layout/Layout';
 import Privat from './hoc/Privat';
+import PrivatAdmin from './hoc/PrivatAdmin';
 import AdminPage from './pages/AdminPage';
 import BasketPage from './pages/BasketPage';
 import EditGoodPage from './pages/EditGoodPage';
@@ -22,17 +23,17 @@ function App() {
           <Route
             path='goods/:id/edit'
             element={
-              <Privat>
+              <PrivatAdmin>
                 <EditGoodPage />
-              </Privat>
+              </PrivatAdmin>
             }
           />
           <Route
             path='admin'
             element={
-              <Privat>
+              <PrivatAdmin>
                 <AdminPage />
-              </Privat>
+              </PrivatAdmin>
             }
           />
           <Route

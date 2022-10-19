@@ -1,11 +1,20 @@
-import { Button, Modal } from 'antd';
+import { Modal } from 'antd';
 import React, { useState } from 'react';
 import { message } from 'antd';
 import { v4 as uuidv4 } from 'uuid';
-import BasketItem from '../../../components/BasketItem/BasketItem';
 import MainBasketItem from '../../../components/BasketItem/MainBasketItem/MainBasketItem';
+import {
+  useConfirmDiliveryBasketMutation,
+  useGetSingleUserQuery,
+} from '../../../redux/goodsApi';
+import Spinner from '../../Spinner/Spinner';
+import { useSelector } from 'react-redux';
 
 const ConfirmDilivery = ({ result }) => {
+  const user = useSelector((state) => state.users.lkUser);
+  const [removeBasketItem] = useConfirmDiliveryBasketMutation();
+  let { data = [], isLoading } = useGetSingleUserQuery(user.id);
+
   const successAdd = () => {
     message.success('Заказ успешно оформлен!', [1]);
   };
@@ -14,13 +23,34 @@ const ConfirmDilivery = ({ result }) => {
   const showModal = () => {
     setIsModalOpen(true);
   };
-  const handleOk = () => {
+
+  const handleOk = async () => {
     setIsModalOpen(false);
     successAdd();
+    let date = new Date();
+    let userHistory = JSON.parse(JSON.stringify(data.history));
+    // userHistory = userHistory[0]
+
+    // let newHistory = Array.from(data.history);
+    // newHistory.push({ ...data.basket.item });
+    userHistory[date] = { ...data.basket.item };
+    // userHistory.push(userHistory)
+    // let finishHistory = []
+    // finishHistory.push(obj)
+    console.log(userHistory);
+    await removeBasketItem({
+      idUser: user.id,
+      item: [],
+      generalSum: 0,
+      history: userHistory,
+    }).unwrap();
   };
+
   const handleCancel = () => {
     setIsModalOpen(false);
   };
+
+  if (isLoading) return <Spinner />;
 
   return (
     <>
@@ -42,7 +72,10 @@ const ConfirmDilivery = ({ result }) => {
           const { id, title, price, img, col } = item;
           let resultSum = col * price;
           return (
-            <div className='flex items-center mb-4 justify-between' key={uuidv4()}>
+            <div
+              className='flex items-center mb-4 justify-between'
+              key={uuidv4()}
+            >
               <MainBasketItem
                 id={id}
                 title={title}

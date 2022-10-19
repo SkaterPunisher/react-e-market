@@ -83,6 +83,22 @@ export const goodsApi = createApi({
       invalidatesTags: [{type: 'User'}]
     }),
 
+    confirmDiliveryBasket: build.mutation({
+      query: (body) => ({
+        url: `/users/${body.idUser}`,
+        method: 'PATCH',
+        body: {
+          basket: {
+            item: body.item,
+          },
+          GeneralsumInBasket: body.generalSum,
+          history: body.history
+        },
+      }),
+      invalidatesTags: [{type: 'User'}]
+    }),
+
+
   }),
 });
 
@@ -94,4 +110,5 @@ export const {
   useAddGoodsInBasketMutation,
   useRemoveGoodsInBasketMutation,
   useIncrementGoodsInBasketMutation,
+  useConfirmDiliveryBasketMutation,
 } = goodsApi;

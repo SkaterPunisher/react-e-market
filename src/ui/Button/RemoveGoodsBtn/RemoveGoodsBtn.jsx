@@ -13,7 +13,7 @@ const RemoveGoodsBtn = ({ id }) => {
     message.success('Товар успешно удален!', [1]);
   };
   const user = useSelector((state) => state.users.lkUser);
-  const { data = [] } = useGetSingleUserQuery(user.id);
+  const { data = [], } = useGetSingleUserQuery(user.id);
 
   const [RemoveProductInBasket, { isLoading }] =
     useRemoveGoodsInBasketMutation();
