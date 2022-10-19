@@ -15,7 +15,6 @@ const AddGoodsBtn = ({ text, id, goods }) => {
 
   const { data = [] } = useGetUsersQuery(user.id);
   let result = data.find((item) => item.id == user.id);
-  console.log(data);
 
   const [addProductInBasket, { isLoading }] = useAddGoodsInBasketMutation();
 

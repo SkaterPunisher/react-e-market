@@ -3549,11 +3549,18 @@
             "title": "Incredible Granite Shirt",
             "img": "https://api.lorem.space/image/fashion?w=640&h=480&r=8098",
             "price": 767,
-            "col": 1
+            "col": 3
+          },
+          {
+            "id": 10,
+            "title": "Small Concrete Cheese",
+            "img": "https://api.lorem.space/image?w=640&h=480&r=8265",
+            "price": 957,
+            "col": 5
           }
         ]
       },
-      "GeneralsumInBasket": 767,
+      "GeneralsumInBasket": 7086,
       "history": []
     },
     {
