@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+
 import { addGoods } from '../../redux/features/initialGoods/initialGoodsSlice';
 import Spinner from '../../ui/Spinner/Spinner';
 import MoreGoodsBtn from '../../ui/Button/MoreGoodsBtn/MoreGoodsBtn';

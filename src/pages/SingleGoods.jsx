@@ -1,34 +1,34 @@
-import React, { useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router';
-import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { useNavigate, useParams, useLocation } from 'react-router';
 import Spinner from '../ui/Spinner/Spinner';
 import { useGetSingleGoodsQuery } from '../redux/goodsApi';
+import GoBackBtn from '../ui/Button/GoBackBtn/GoBackBtn';
+import CarouselImages from '../components/SingleGoods/CarouselImages/CarouselImages';
+import MainInformation from '../components/SingleGoods/MainInformation/MainInformation';
+
 
 const SingleGoods = () => {
+  let dataLocation = useLocation();
   const { id } = useParams();
   const navigate = useNavigate();
-  const auth = useSelector((state) => state.users.auth);
 
   const { data = [], isLoading } = useGetSingleGoodsQuery(id);
   const { title, price, images, description } = data;
 
   if (isLoading) return <Spinner />;
 
-  const goBack = () => navigate('/goods');
+  const goGoods = () => navigate('/goods');
+  const goBack = () => navigate('/basket');
 
   return (
-    <>
-      <button onClick={goBack} className='border-4 px-6 py-2 text-black'>
-        Вернуться назад
-      </button>
-      <div>
-      <img src={images[0]} alt={title} className='w-[500px] h-[500px] object-cover'/>
-        {id}, {title}, {price},
-      </div>
-
-      {auth ? <Link to={`/goods/${id}/edit`}>Редактировать товар</Link> : ''}
-    </>
+    <div className='flex my-8'>
+      {dataLocation.state != null ? (
+        <GoBackBtn onClick={goBack} />
+      ) : (
+        <GoBackBtn onClick={goGoods} />
+      )}
+      <CarouselImages images={images} title={title}/>
+      <MainInformation title={title} description={description} price={price} id={id} data={data}/>
+    </div>
   );
 };
 

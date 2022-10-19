@@ -4,7 +4,7 @@
       "id": 8,
       "title": "Generic Granite Chicken",
       "price": 20000,
-      "description": "new description",
+      "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
       "category": {
         "id": 3,
         "name": "Furniture",
@@ -3543,9 +3543,17 @@
       "role": "customer",
       "avatar": "https://api.lorem.space/image/face?w=640&h=480&r=174",
       "basket": {
-        "item": []
+        "item": [
+          {
+            "id": 22,
+            "title": "Incredible Granite Shirt",
+            "img": "https://api.lorem.space/image/fashion?w=640&h=480&r=8098",
+            "price": 767,
+            "col": 1
+          }
+        ]
       },
-      "GeneralsumInBasket": 0,
+      "GeneralsumInBasket": 767,
       "history": []
     },
     {

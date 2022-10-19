@@ -36,7 +36,7 @@ const IncrementGoodsBtn = ({ id }) => {
     }).unwrap();
   };
 
-  if (isLoading) return <Spinner />;
+  if (isLoading) return <div className='mr-8'><Spinner /></div>;
 
   return (
     <button
