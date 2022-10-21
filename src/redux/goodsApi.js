@@ -6,7 +6,7 @@ function providesList(resultsWithIds, tagType) {
         { type: tagType, id: 'LIST' },
         ...resultsWithIds.map(({ id }) => ({ type: tagType, id })),
       ]
-    : [{ type: tagType, id: 'LIST' }]
+    : [{ type: tagType, id: 'LIST' }];
 }
 
 export const goodsApi = createApi({
@@ -14,30 +14,30 @@ export const goodsApi = createApi({
   tagTypes: ['Goods', 'User'],
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3001/' }),
   endpoints: (build) => ({
-
     getGoods: build.query({
-      query: (limit) => `/products?_start=0&_end=${limit}`,
-      providesTags: (result) => providesList(result, 'Goods')
+      // query: (body) => `/${body.category}?_start=0&_end=${body.limit}`,
+      query: (body) => `/products?category_like=${body.category}&_start=0&_end=${body.limit}`,
+      providesTags: (result) => providesList(result, 'Goods'),
     }),
 
     getSingleGoods: build.query({
       query: (id) => `/products/${id}`,
     }),
 
+    getCategory: build.query({
+      query: () => `/categories`,
+      providesTags: (result) => providesList(result, 'User'),
+    }),
+
     getUsers: build.query({
       query: () => `/users`,
-      providesTags: (result) => providesList(result, 'User')
+      providesTags: (result) => providesList(result, 'User'),
     }),
 
     getSingleUser: build.query({
       query: (id) => `/users/${id}`,
       providesTags: (result) =>
-        result
-          ? [
-              result,
-              { type: 'User' },
-            ]
-          : [{ type: 'User' }],
+        result ? [result, { type: 'User' }] : [{ type: 'User' }],
     }),
 
     addGoodsInBasket: build.mutation({
@@ -48,11 +48,11 @@ export const goodsApi = createApi({
           basket: {
             item: body.data,
           },
-          GeneralsumInBasket: body.sum
+          GeneralsumInBasket: body.sum,
         },
       }),
       // invalidatesTags: (result, error, arg) => [{type: 'User', id: arg.id}]
-      invalidatesTags: [{type: 'User'}]
+      invalidatesTags: [{ type: 'User' }],
     }),
 
     removeGoodsInBasket: build.mutation({
@@ -63,10 +63,10 @@ export const goodsApi = createApi({
           basket: {
             item: body.data,
           },
-          GeneralsumInBasket: body.sum
+          GeneralsumInBasket: body.sum,
         },
       }),
-      invalidatesTags: [{type: 'User'}]
+      invalidatesTags: [{ type: 'User' }],
     }),
 
     incrementGoodsInBasket: build.mutation({
@@ -77,10 +77,10 @@ export const goodsApi = createApi({
           basket: {
             item: body.item,
           },
-          GeneralsumInBasket: body.generalSum
+          GeneralsumInBasket: body.generalSum,
         },
       }),
-      invalidatesTags: [{type: 'User'}]
+      invalidatesTags: [{ type: 'User' }],
     }),
 
     confirmDiliveryBasket: build.mutation({
@@ -92,13 +92,11 @@ export const goodsApi = createApi({
             item: body.item,
           },
           GeneralsumInBasket: body.generalSum,
-          history: body.history
+          history: body.history,
         },
       }),
-      invalidatesTags: [{type: 'User'}]
+      invalidatesTags: [{ type: 'User' }],
     }),
-
-
   }),
 });
 
@@ -111,4 +109,5 @@ export const {
   useRemoveGoodsInBasketMutation,
   useIncrementGoodsInBasketMutation,
   useConfirmDiliveryBasketMutation,
+  useGetCategoryQuery,
 } = goodsApi;
