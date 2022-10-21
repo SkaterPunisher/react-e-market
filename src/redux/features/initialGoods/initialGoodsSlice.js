@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   limit: 10,
   category: '',
+  searchName: ''
 };
 
 export const initialGoodsSlice = createSlice({
@@ -15,9 +16,12 @@ export const initialGoodsSlice = createSlice({
     changeCategory: (state, action) => {
       state.category = action.payload;
     },
+    searchName: (state, action) => {
+      state.searchName = action.payload;
+    },
   },
   extraReducers: {},
 });
 
-export const { addGoods, changeCategory } = initialGoodsSlice.actions;
+export const { addGoods, changeCategory, searchName } = initialGoodsSlice.actions;
 export default initialGoodsSlice.reducer;

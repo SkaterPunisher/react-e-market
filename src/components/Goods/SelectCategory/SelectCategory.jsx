@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useGetCategoryQuery } from '../../../redux/goodsApi';
 import Spinner from '../../../ui/Spinner/Spinner';
 import { v4 as uuidv4 } from 'uuid';
@@ -8,19 +8,22 @@ import { changeCategory } from '../../../redux/features/initialGoods/initialGood
 const SelectCategory = () => {
   const dispatch = useDispatch();
   const { data = [], isLoading } = useGetCategoryQuery();
+  const [categories, setCategories] = useState('Все товары')
+
 
   const handleChange = (e) => {
     dispatch(changeCategory(e.target.value));
+    setCategories(e.target.value)
   };
 
   if (isLoading) return <Spinner />;
 
   return (
-    <div>
+    <div className='ml-10 flex items-center border-4 w-fit rounded-full pr-6 overflow-hidden'>
       <select
         name='category'
         onChange={handleChange}
-        className='ml-10 mt-2 px-6 py-4 bg-slate-100 rounded-full'
+        className='px-6 py-4 bg-slate-100'
       >
         {data?.map((item) => {
           return (
@@ -30,6 +33,7 @@ const SelectCategory = () => {
           );
         })}
       </select>
+      <h1 className='m-0 ml-6 uppercase text-[15px] text-gray-400'>{categories.length > 0 ? categories : 'All goods'}</h1>
     </div>
   );
 };
