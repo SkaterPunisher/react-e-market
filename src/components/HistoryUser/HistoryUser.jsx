@@ -10,7 +10,6 @@ const { Panel } = Collapse;
 const HistoryUser = ({ data }) => {
   const { history } = data;
   const arrHistory = Object.entries(history);
-  console.log(arrHistory);
 
   if (arrHistory.length == 0) return <div className='text-center text-[25px]'>Истории заказов пока нет. <Link to='/goods'>Перейти к товарам</Link></div>;
 

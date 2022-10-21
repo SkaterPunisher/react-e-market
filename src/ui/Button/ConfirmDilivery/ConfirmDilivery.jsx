@@ -29,15 +29,7 @@ const ConfirmDilivery = ({ result }) => {
     successAdd();
     let date = new Date();
     let userHistory = JSON.parse(JSON.stringify(data.history));
-    // userHistory = userHistory[0]
-
-    // let newHistory = Array.from(data.history);
-    // newHistory.push({ ...data.basket.item });
     userHistory[date] = { ...data.basket.item };
-    // userHistory.push(userHistory)
-    // let finishHistory = []
-    // finishHistory.push(obj)
-    console.log(userHistory);
     await removeBasketItem({
       idUser: user.id,
       item: [],
