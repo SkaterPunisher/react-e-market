@@ -20,6 +20,12 @@ export const goodsApi = createApi({
       providesTags: (result) => providesList(result, 'Goods'),
     }),
 
+    searchGoods: build.query({
+      // query: (body) => `/${body.category}?_start=0&_end=${body.limit}`,
+      query: (body) => `/products?title_like=${body}`,
+      providesTags: (result) => providesList(result, 'Goods'),
+    }),
+
     getSingleGoods: build.query({
       query: (id) => `/products/${id}`,
     }),
@@ -110,4 +116,5 @@ export const {
   useIncrementGoodsInBasketMutation,
   useConfirmDiliveryBasketMutation,
   useGetCategoryQuery,
+  useSearchGoodsQuery,
 } = goodsApi;

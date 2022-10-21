@@ -2616,17 +2616,9 @@
       "role": "customer",
       "avatar": "https://api.lorem.space/image/face?w=640&h=480&r=174",
       "basket": {
-        "item": [
-          {
-            "id": 15,
-            "title": "Ergonomic Fresh Gloves",
-            "img": "https://api.lorem.space/image/furniture?w=640&h=480&r=5521",
-            "price": 719,
-            "col": 1
-          }
-        ]
+        "item": []
       },
-      "GeneralsumInBasket": 719,
+      "GeneralsumInBasket": 0,
       "history": {
         "Wed Oct 19 2022 14:47:27 GMT+0300 (Москва, стандартное время)": {
           "0": {
@@ -2747,6 +2739,22 @@
             "title": "Sleek Cotton Pizza",
             "img": "https://api.lorem.space/image/watch?w=640&h=480&r=7842",
             "price": 515,
+            "col": 1
+          }
+        },
+        "Fri Oct 21 2022 16:13:23 GMT+0300 (Москва, стандартное время)": {
+          "0": {
+            "id": 15,
+            "title": "Ergonomic Fresh Gloves",
+            "img": "https://api.lorem.space/image/furniture?w=640&h=480&r=5521",
+            "price": 719,
+            "col": 1
+          },
+          "1": {
+            "id": 9,
+            "title": "Handmade Metal Pizza",
+            "img": "https://api.lorem.space/image/watch?w=640&h=480&r=2885",
+            "price": 793,
             "col": 1
           }
         }
