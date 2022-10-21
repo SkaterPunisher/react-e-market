@@ -3543,9 +3543,17 @@
       "role": "customer",
       "avatar": "https://api.lorem.space/image/face?w=640&h=480&r=174",
       "basket": {
-        "item": []
+        "item": [
+          {
+            "id": 15,
+            "title": "Ergonomic Fresh Gloves",
+            "img": "https://api.lorem.space/image/furniture?w=640&h=480&r=5521",
+            "price": 719,
+            "col": 1
+          }
+        ]
       },
-      "GeneralsumInBasket": 0,
+      "GeneralsumInBasket": 719,
       "history": {
         "Wed Oct 19 2022 14:47:27 GMT+0300 (Москва, стандартное время)": {
           "0": {

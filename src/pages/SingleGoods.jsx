@@ -17,7 +17,7 @@ const SingleGoods = () => {
   if (isLoading) return <Spinner />;
 
   const goGoods = () => navigate('/goods');
-  const goBack = () => navigate('/basket');
+  const goBack = () => navigate(-1);
 
   return (
     <div className='flex my-8'>
