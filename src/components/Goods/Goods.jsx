@@ -1,22 +1,25 @@
 import Spinner from '../../ui/Spinner/Spinner';
 import MoreGoodsBtn from '../../ui/Button/MoreGoodsBtn/MoreGoodsBtn';
 import OneGood from './OneGood/OneGood';
-import { useGetGoodsQuery } from '../../redux/goodsApi';
+import { useGetGoodsQuery, useSearchGoodsQuery } from '../../redux/goodsApi';
 import { useSelector } from 'react-redux';
 import SelectCategory from './SelectCategory/SelectCategory';
 import SearchTitle from './SearchTitle/SearchTitle';
 
 const Goods = () => {
-
   const limit = useSelector((state) => state.initialGoods.limit);
+  const searchName = useSelector((state) => state.initialGoods.searchName);
   const categoryGoods = useSelector((state) => state.initialGoods.category);
 
   const body = {
     limit: limit,
     category: categoryGoods,
+    search: searchName,
   };
 
-  const { data = [], isLoading } = useGetGoodsQuery(body);
+  const { data: goods = [], isLoading } = useGetGoodsQuery(body);
+  // const { data: search, isLoading: Loading } = useSearchGoodsQuery(searchName);
+  // console.log(goods)
 
   if (isLoading) return <Spinner />;
 
@@ -24,7 +27,8 @@ const Goods = () => {
     <>
       <SearchTitle />
       <SelectCategory />
-      <OneGood data={data} />
+      {/* <OneGood data={search == '' ? goods : search} /> */}
+      <OneGood data={goods} />
       <div className='text-center'>
         <MoreGoodsBtn />
       </div>

@@ -2616,9 +2616,24 @@
       "role": "customer",
       "avatar": "https://api.lorem.space/image/face?w=640&h=480&r=174",
       "basket": {
-        "item": []
+        "item": [
+          {
+            "id": 26,
+            "title": "Small Rubber Shoes",
+            "img": "https://api.lorem.space/image/shoes?w=640&h=480&r=3919",
+            "price": 541,
+            "col": 1
+          },
+          {
+            "id": 25,
+            "title": "Small Plastic Keyboard",
+            "img": "https://api.lorem.space/image/shoes?w=640&h=480&r=1139",
+            "price": 889,
+            "col": 1
+          }
+        ]
       },
-      "GeneralsumInBasket": 0,
+      "GeneralsumInBasket": 1430,
       "history": {
         "Wed Oct 19 2022 14:47:27 GMT+0300 (Москва, стандартное время)": {
           "0": {
