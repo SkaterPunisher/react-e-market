@@ -17,14 +17,7 @@ export const goodsApi = createApi({
     getGoods: build.query({
       query: (body) => body.search == '' ? `/products?category_like=${body.category}&_start=0&_end=${body.limit}` : `/products?title_like=${body.search}`,
       providesTags: (result) => providesList(result, 'Goods'),
-      // query: (body) => `/products?category_like=${body.category}&_start=0&_end=${body.limit}`,
-      // providesTags: (result) => providesList(result, 'Goods'),
     }),
-
-    // searchGoods: build.query({
-    //   query: (body) => `/products?title_like=${body}`,
-    //   providesTags: (result) => providesList(result, 'Goods'),
-    // }),
 
     getSingleGoods: build.query({
       query: (id) => `/products/${id}`,
