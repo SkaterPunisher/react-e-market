@@ -20,7 +20,7 @@ const SingleGoods = () => {
   const goBack = () => navigate(-1);
 
   return (
-    <div className='flex my-8'>
+    <div className='flex my-8 px-6'>
       {dataLocation.state != null ? (
         <GoBackBtn onClick={goBack} />
       ) : (

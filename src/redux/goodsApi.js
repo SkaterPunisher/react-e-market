@@ -21,6 +21,21 @@ export const goodsApi = createApi({
 
     getSingleGoods: build.query({
       query: (id) => `/products/${id}`,
+      providesTags: (result) =>
+      result ? [result, { type: 'Goods' }] : [{ type: 'Goods' }],
+    }),
+
+    changeSingleGoods: build.mutation({
+      query: (body) => ({
+        url: `/products/${body.idGoods}`,
+        method: 'PATCH',
+        body: {
+          title: body.newTitle,
+          price: body.newPrice,
+          description: body.newDescription
+        },
+      }),
+      invalidatesTags: [{ type: 'Goods' }],
     }),
 
     getCategory: build.query({
@@ -109,5 +124,5 @@ export const {
   useIncrementGoodsInBasketMutation,
   useConfirmDiliveryBasketMutation,
   useGetCategoryQuery,
-  // useSearchGoodsQuery,
+  useChangeSingleGoodsMutation,
 } = goodsApi;
