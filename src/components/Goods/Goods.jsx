@@ -18,8 +18,6 @@ const Goods = () => {
   };
 
   const { data: goods = [], isLoading } = useGetGoodsQuery(body);
-  // const { data: search, isLoading: Loading } = useSearchGoodsQuery(searchName);
-  // console.log(goods)
 
   if (isLoading) return <Spinner />;
 
@@ -27,7 +25,6 @@ const Goods = () => {
     <>
       <SearchTitle />
       <SelectCategory />
-      {/* <OneGood data={search == '' ? goods : search} /> */}
       <OneGood data={goods} />
       <div className='text-center'>
         <MoreGoodsBtn />

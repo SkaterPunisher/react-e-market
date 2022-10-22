@@ -9,6 +9,9 @@ const SearchTitle = () => {
     if (e.keyCode === 13) {
       dispatch(searchName(e.target.value));
     }
+    if (e.target.value.length < 1) {
+      dispatch(searchName(e.target.value))
+    }
   };
 
   return (
