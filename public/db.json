@@ -2561,32 +2561,91 @@
       ],
       "category": "clothes",
       "id": 229
+    },
+    {
+      "operationName": "IntrospectionQuery",
+      "variables": {},
+      "query": "query IntrospectionQuery {\n  __schema {\n    queryType {\n      name\n    }\n    mutationType {\n      name\n    }\n    subscriptionType {\n      name\n    }\n    types {\n      ...FullType\n    }\n    directives {\n      name\n      description\n      locations\n      args {\n        ...InputValue\n      }\n    }\n  }\n}\n\nfragment FullType on __Type {\n  kind\n  name\n  description\n  fields(includeDeprecated: true) {\n    name\n    description\n    args {\n      ...InputValue\n    }\n    type {\n      ...TypeRef\n    }\n    isDeprecated\n    deprecationReason\n  }\n  inputFields {\n    ...InputValue\n  }\n  interfaces {\n    ...TypeRef\n  }\n  enumValues(includeDeprecated: true) {\n    name\n    description\n    isDeprecated\n    deprecationReason\n  }\n  possibleTypes {\n    ...TypeRef\n  }\n}\n\nfragment InputValue on __InputValue {\n  name\n  description\n  type {\n    ...TypeRef\n  }\n  defaultValue\n}\n\nfragment TypeRef on __Type {\n  kind\n  name\n  ofType {\n    kind\n    name\n    ofType {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}\n",
+      "id": 230
+    },
+    {
+      "operationName": "IntrospectionQuery",
+      "variables": {},
+      "query": "query IntrospectionQuery {\n  __schema {\n    queryType {\n      name\n    }\n    mutationType {\n      name\n    }\n    subscriptionType {\n      name\n    }\n    types {\n      ...FullType\n    }\n    directives {\n      name\n      description\n      locations\n      args {\n        ...InputValue\n      }\n    }\n  }\n}\n\nfragment FullType on __Type {\n  kind\n  name\n  description\n  fields(includeDeprecated: true) {\n    name\n    description\n    args {\n      ...InputValue\n    }\n    type {\n      ...TypeRef\n    }\n    isDeprecated\n    deprecationReason\n  }\n  inputFields {\n    ...InputValue\n  }\n  interfaces {\n    ...TypeRef\n  }\n  enumValues(includeDeprecated: true) {\n    name\n    description\n    isDeprecated\n    deprecationReason\n  }\n  possibleTypes {\n    ...TypeRef\n  }\n}\n\nfragment InputValue on __InputValue {\n  name\n  description\n  type {\n    ...TypeRef\n  }\n  defaultValue\n}\n\nfragment TypeRef on __Type {\n  kind\n  name\n  ofType {\n    kind\n    name\n    ofType {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}\n",
+      "id": 231
+    },
+    {
+      "operationName": "IntrospectionQuery",
+      "variables": {},
+      "query": "query IntrospectionQuery {\n  __schema {\n    queryType {\n      name\n    }\n    mutationType {\n      name\n    }\n    subscriptionType {\n      name\n    }\n    types {\n      ...FullType\n    }\n    directives {\n      name\n      description\n      locations\n      args {\n        ...InputValue\n      }\n    }\n  }\n}\n\nfragment FullType on __Type {\n  kind\n  name\n  description\n  fields(includeDeprecated: true) {\n    name\n    description\n    args {\n      ...InputValue\n    }\n    type {\n      ...TypeRef\n    }\n    isDeprecated\n    deprecationReason\n  }\n  inputFields {\n    ...InputValue\n  }\n  interfaces {\n    ...TypeRef\n  }\n  enumValues(includeDeprecated: true) {\n    name\n    description\n    isDeprecated\n    deprecationReason\n  }\n  possibleTypes {\n    ...TypeRef\n  }\n}\n\nfragment InputValue on __InputValue {\n  name\n  description\n  type {\n    ...TypeRef\n  }\n  defaultValue\n}\n\nfragment TypeRef on __Type {\n  kind\n  name\n  ofType {\n    kind\n    name\n    ofType {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}\n",
+      "id": 232
+    },
+    {
+      "operationName": "IntrospectionQuery",
+      "variables": {},
+      "query": "query IntrospectionQuery {\n  __schema {\n    queryType {\n      name\n    }\n    mutationType {\n      name\n    }\n    subscriptionType {\n      name\n    }\n    types {\n      ...FullType\n    }\n    directives {\n      name\n      description\n      locations\n      args {\n        ...InputValue\n      }\n    }\n  }\n}\n\nfragment FullType on __Type {\n  kind\n  name\n  description\n  fields(includeDeprecated: true) {\n    name\n    description\n    args {\n      ...InputValue\n    }\n    type {\n      ...TypeRef\n    }\n    isDeprecated\n    deprecationReason\n  }\n  inputFields {\n    ...InputValue\n  }\n  interfaces {\n    ...TypeRef\n  }\n  enumValues(includeDeprecated: true) {\n    name\n    description\n    isDeprecated\n    deprecationReason\n  }\n  possibleTypes {\n    ...TypeRef\n  }\n}\n\nfragment InputValue on __InputValue {\n  name\n  description\n  type {\n    ...TypeRef\n  }\n  defaultValue\n}\n\nfragment TypeRef on __Type {\n  kind\n  name\n  ofType {\n    kind\n    name\n    ofType {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}\n",
+      "id": 233
+    },
+    {
+      "operationName": "IntrospectionQuery",
+      "variables": {},
+      "query": "query IntrospectionQuery {\n  __schema {\n    queryType {\n      name\n    }\n    mutationType {\n      name\n    }\n    subscriptionType {\n      name\n    }\n    types {\n      ...FullType\n    }\n    directives {\n      name\n      description\n      locations\n      args {\n        ...InputValue\n      }\n    }\n  }\n}\n\nfragment FullType on __Type {\n  kind\n  name\n  description\n  fields(includeDeprecated: true) {\n    name\n    description\n    args {\n      ...InputValue\n    }\n    type {\n      ...TypeRef\n    }\n    isDeprecated\n    deprecationReason\n  }\n  inputFields {\n    ...InputValue\n  }\n  interfaces {\n    ...TypeRef\n  }\n  enumValues(includeDeprecated: true) {\n    name\n    description\n    isDeprecated\n    deprecationReason\n  }\n  possibleTypes {\n    ...TypeRef\n  }\n}\n\nfragment InputValue on __InputValue {\n  name\n  description\n  type {\n    ...TypeRef\n  }\n  defaultValue\n}\n\nfragment TypeRef on __Type {\n  kind\n  name\n  ofType {\n    kind\n    name\n    ofType {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}\n",
+      "id": 234
+    },
+    {
+      "operationName": "IntrospectionQuery",
+      "variables": {},
+      "query": "query IntrospectionQuery {\n  __schema {\n    queryType {\n      name\n    }\n    mutationType {\n      name\n    }\n    subscriptionType {\n      name\n    }\n    types {\n      ...FullType\n    }\n    directives {\n      name\n      description\n      locations\n      args {\n        ...InputValue\n      }\n    }\n  }\n}\n\nfragment FullType on __Type {\n  kind\n  name\n  description\n  fields(includeDeprecated: true) {\n    name\n    description\n    args {\n      ...InputValue\n    }\n    type {\n      ...TypeRef\n    }\n    isDeprecated\n    deprecationReason\n  }\n  inputFields {\n    ...InputValue\n  }\n  interfaces {\n    ...TypeRef\n  }\n  enumValues(includeDeprecated: true) {\n    name\n    description\n    isDeprecated\n    deprecationReason\n  }\n  possibleTypes {\n    ...TypeRef\n  }\n}\n\nfragment InputValue on __InputValue {\n  name\n  description\n  type {\n    ...TypeRef\n  }\n  defaultValue\n}\n\nfragment TypeRef on __Type {\n  kind\n  name\n  ofType {\n    kind\n    name\n    ofType {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}\n",
+      "id": 235
+    },
+    {
+      "operationName": "IntrospectionQuery",
+      "variables": {},
+      "query": "query IntrospectionQuery {\n  __schema {\n    queryType {\n      name\n    }\n    mutationType {\n      name\n    }\n    subscriptionType {\n      name\n    }\n    types {\n      ...FullType\n    }\n    directives {\n      name\n      description\n      locations\n      args {\n        ...InputValue\n      }\n    }\n  }\n}\n\nfragment FullType on __Type {\n  kind\n  name\n  description\n  fields(includeDeprecated: true) {\n    name\n    description\n    args {\n      ...InputValue\n    }\n    type {\n      ...TypeRef\n    }\n    isDeprecated\n    deprecationReason\n  }\n  inputFields {\n    ...InputValue\n  }\n  interfaces {\n    ...TypeRef\n  }\n  enumValues(includeDeprecated: true) {\n    name\n    description\n    isDeprecated\n    deprecationReason\n  }\n  possibleTypes {\n    ...TypeRef\n  }\n}\n\nfragment InputValue on __InputValue {\n  name\n  description\n  type {\n    ...TypeRef\n  }\n  defaultValue\n}\n\nfragment TypeRef on __Type {\n  kind\n  name\n  ofType {\n    kind\n    name\n    ofType {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}\n",
+      "id": 236
     }
   ],
   "categories": [
     {
+      "id": 0,
+      "name": "",
+      "visibleName": "Выберите категорию товаров",
+      "image": ""
+    },
+    {
       "id": 1,
-      "name": "electronics",
-      "image": "https://api.lorem.space/image/watch?w=640&h=480&r=768"
+      "name": "",
+      "visibleName": "Все товары",
+      "image": ""
     },
     {
       "id": 2,
-      "name": "furniture",
-      "image": "https://api.lorem.space/image/furniture?w=640&h=480&r=5582"
+      "name": "electronics",
+      "visibleName": "Электроника",
+      "image": "https://api.lorem.space/image/watch?w=640&h=480&r=768"
     },
     {
       "id": 3,
-      "name": "shoes",
-      "image": "https://api.lorem.space/image/shoes?w=640&h=480&r=6592"
+      "name": "furniture",
+      "visibleName": "Мебель",
+      "image": "https://api.lorem.space/image/furniture?w=640&h=480&r=5582"
     },
     {
       "id": 4,
-      "name": "others",
-      "image": "https://api.lorem.space/image?w=640&h=480&r=5023"
+      "name": "shoes",
+      "visibleName": "Обувь",
+      "image": "https://api.lorem.space/image/shoes?w=640&h=480&r=6592"
     },
     {
       "id": 5,
+      "name": "others",
+      "visibleName": "Разное",
+      "image": "https://api.lorem.space/image?w=640&h=480&r=5023"
+    },
+    {
+      "id": 6,
       "name": "clothes",
+      "visibleName": "Одежда",
       "image": "https://api.lorem.space/image?w=640&h=480&r=5023"
     }
   ],
@@ -2601,15 +2660,22 @@
       "basket": {
         "item": [
           {
-            "id": 15,
-            "title": "Ergonomic Fresh Gloves",
-            "img": "https://api.lorem.space/image/furniture?w=640&h=480&r=5521",
-            "price": 719,
+            "id": 26,
+            "title": "Small Rubber Shoes",
+            "img": "https://api.lorem.space/image/shoes?w=640&h=480&r=3919",
+            "price": 541,
+            "col": 1
+          },
+          {
+            "id": 25,
+            "title": "Small Plastic Keyboard",
+            "img": "https://api.lorem.space/image/shoes?w=640&h=480&r=1139",
+            "price": 889,
             "col": 1
           }
         ]
       },
-      "GeneralsumInBasket": 719,
+      "GeneralsumInBasket": 1430,
       "history": {
         "Wed Oct 19 2022 14:47:27 GMT+0300 (Москва, стандартное время)": {
           "0": {
@@ -2732,6 +2798,22 @@
             "price": 515,
             "col": 1
           }
+        },
+        "Fri Oct 21 2022 16:13:23 GMT+0300 (Москва, стандартное время)": {
+          "0": {
+            "id": 15,
+            "title": "Ergonomic Fresh Gloves",
+            "img": "https://api.lorem.space/image/furniture?w=640&h=480&r=5521",
+            "price": 719,
+            "col": 1
+          },
+          "1": {
+            "id": 9,
+            "title": "Handmade Metal Pizza",
+            "img": "https://api.lorem.space/image/watch?w=640&h=480&r=2885",
+            "price": 793,
+            "col": 1
+          }
         }
       }
     },
@@ -2759,7 +2841,31 @@
         "item": []
       },
       "GeneralsumInBasket": 0,
-      "history": {}
+      "history": {
+        "Sat Oct 22 2022 08:52:34 GMT+0300 (Москва, стандартное время)": {
+          "0": {
+            "id": 9,
+            "title": "Handmade Metal Pizza",
+            "img": "https://api.lorem.space/image/watch?w=640&h=480&r=2885",
+            "price": 793,
+            "col": 4
+          },
+          "1": {
+            "id": 13,
+            "title": "Sleek Cotton Pizza",
+            "img": "https://api.lorem.space/image/watch?w=640&h=480&r=7842",
+            "price": 515,
+            "col": 5
+          },
+          "2": {
+            "id": 8,
+            "title": "Generic Granite Chicken",
+            "img": "https://api.lorem.space/image/furniture?w=640&h=480&r=4053",
+            "price": 20000,
+            "col": 4
+          }
+        }
+      }
     }
   ]
 }

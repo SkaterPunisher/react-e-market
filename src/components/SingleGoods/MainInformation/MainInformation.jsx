@@ -15,7 +15,7 @@ const MainInformation = ({ title, description, price, id, data }) => {
         <h2 className='text-[30px]'>{price} ₽</h2>
         <AddGoodsBtn text={'Добавить в корзину'} id={id} goods={data} />
         {auth ? (
-          <Link to={`/goods/${id}/edit`} className='flex items-center mt-10'>
+          <Link to={`/goods/${id}/edit`} state={{ id: id }} className='flex items-center mt-10'>
             <MdModeEdit />
             Редактировать товар
           </Link>

@@ -19,7 +19,7 @@ const SearchTitle = () => {
       <input
         onKeyUp={handleSearch}
         className='bg-gray-100 w-[90%] px-6 py-2 rounded-full mt-2 mb-4'
-        placeholder='Поиск по названию товара'
+        placeholder='Поиск товара по названию'
       />
     </div>
   );
