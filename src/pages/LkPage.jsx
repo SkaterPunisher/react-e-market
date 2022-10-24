@@ -20,9 +20,9 @@ const LkPage = () => {
         Добро пожаловать {data.name} !
       </div>
       <div className='flex flex-col'>
-        <ul className='px-6 py-2 h-full flex flex-col justify-start'>
+        <ul className='px-6 py-2 h-full flex justify-start'>
           <li
-            className={`mb-6 ${
+            className={`${
               location.pathname === '/lk/history'
                 ? 'bg-gray-900 text-white text-[20px] px-4 py-2 rounded-lg mx-2 w-fit'
                 : 'bg-gray-600 text-gray-300 text-[20px] hover:bg-gray-900 hover:text-white px-4 py-2 rounded-lg mx-2 w-fit'
@@ -40,7 +40,7 @@ const LkPage = () => {
             <Link to='about' className='text-inherit'>Информация о пользователе</Link>
           </li>
         </ul>
-        <div className=''>
+        <div className='min-h-[250px] p-6 '>
           <Routes>
             <Route path='history' element={<HistoryUser data={data} />} />
             <Route path='about' element={<AboutUser data={data} />} />

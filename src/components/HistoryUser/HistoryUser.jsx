@@ -14,7 +14,7 @@ const HistoryUser = ({ data }) => {
   if (arrHistory.length == 0) return <div className='text-center text-[25px]'>Истории заказов пока нет. <Link to='/goods' className='text-blue-600'>Перейти к товарам</Link></div>;
 
   return (
-    <div className='min-h-[250px] p-6 '>
+    <div className=''>
       {arrHistory.map((item) => {
         return (
           <Collapse
