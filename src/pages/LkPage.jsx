@@ -28,19 +28,16 @@ const LkPage = () => {
                 : 'bg-gray-600 text-gray-300 text-[20px] hover:bg-gray-900 hover:text-white px-4 py-2 rounded-lg mx-2 w-fit'
             }`}
           >
-            <Link to='history'>История заказов</Link>
+            <Link to='history' className='text-inherit'>История заказов</Link>
           </li>
-          <li>
-            <Link
-              className={`${
-                location.pathname === '/lk/about'
-                  ? 'bg-gray-900 text-white text-[20px] px-4 py-2 rounded-lg mx-2 w-fit py-3'
-                  : 'bg-gray-600 text-gray-300 text-[20px] hover:bg-gray-900 hover:text-white px-4 py-3 rounded-lg mx-2 w-fit'
-              }`}
-              to='about'
-            >
-              Информация о пользователе
-            </Link>
+          <li
+            className={`${
+              location.pathname === '/lk/about'
+                ? 'bg-gray-900 text-white text-[20px] px-4 py-2 rounded-lg mx-2 w-fit'
+                : 'bg-gray-600 text-gray-300 text-[20px] hover:bg-gray-900 hover:text-white px-4 py-2 rounded-lg mx-2 w-fit'
+            }`}
+          >
+            <Link to='about' className='text-inherit'>Информация о пользователе</Link>
           </li>
         </ul>
         <div className=''>
