@@ -29,7 +29,7 @@ function App() {
             }
           />
           <Route
-            path='admin'
+            path='admin/*'
             element={
               <PrivatAdmin>
                 <AdminPage />

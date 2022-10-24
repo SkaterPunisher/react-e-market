@@ -70,18 +70,6 @@ const FormEdidGoods = ({ id }) => {
         CATEGORY:{' '}
         <span className='uppercase text-gray-400'>{goods.category}</span>
       </h1>
-      {/* {goods.images.map((item) => {
-            return (
-              <label key={uuidv4()} className='mb-2'>
-                URL изображения:
-                <input
-                  type='text'
-                  className='w-full bg-slate-100 px-6 py-2 rounded-full'
-                  placeholder={item}
-                />
-              </label>
-            );
-          })} */}
       <button className='bg-green-300 px-6 py-2 rounded-full'>Изменить</button>
     </form>
   );

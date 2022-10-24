@@ -4,7 +4,7 @@ const AboutUser = ({ data }) => {
   const { email, password, name, role, avatar } = data;
 
   return (
-    <div className='flex items-center p-6 min-h-[250px]'>
+    <div className='flex items-center'>
       <div>
         <h2 className='text-[16px]'>Email: <span className='text-gray-400'>{email}</span></h2>
         <h2 className='text-[16px]'>Name: <span className='text-gray-400'>{name}</span></h2>

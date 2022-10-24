@@ -14,9 +14,9 @@
     },
     {
       "id": 9,
-      "title": "Handmade Metal Pizza",
-      "price": 999,
-      "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+      "title": "MackBook Pro 2019 Pro 16\"",
+      "price": 149000,
+      "description": "Крутейший ноут для крутейших программистов",
       "category": "electronics",
       "images": [
         "https://api.lorem.space/image/watch?w=640&h=480&r=2885",
@@ -2603,6 +2603,18 @@
       "variables": {},
       "query": "query IntrospectionQuery {\n  __schema {\n    queryType {\n      name\n    }\n    mutationType {\n      name\n    }\n    subscriptionType {\n      name\n    }\n    types {\n      ...FullType\n    }\n    directives {\n      name\n      description\n      locations\n      args {\n        ...InputValue\n      }\n    }\n  }\n}\n\nfragment FullType on __Type {\n  kind\n  name\n  description\n  fields(includeDeprecated: true) {\n    name\n    description\n    args {\n      ...InputValue\n    }\n    type {\n      ...TypeRef\n    }\n    isDeprecated\n    deprecationReason\n  }\n  inputFields {\n    ...InputValue\n  }\n  interfaces {\n    ...TypeRef\n  }\n  enumValues(includeDeprecated: true) {\n    name\n    description\n    isDeprecated\n    deprecationReason\n  }\n  possibleTypes {\n    ...TypeRef\n  }\n}\n\nfragment InputValue on __InputValue {\n  name\n  description\n  type {\n    ...TypeRef\n  }\n  defaultValue\n}\n\nfragment TypeRef on __Type {\n  kind\n  name\n  ofType {\n    kind\n    name\n    ofType {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}\n",
       "id": 236
+    },
+    {
+      "title": "Iphone 14",
+      "price": 76000,
+      "description": "Модель 2020 года",
+      "category": "electronics",
+      "images": [
+        "https://www.iguides.ru/upload/medialibrary/471/4719e79f32db53ea4db110217c00fcdf.jpeg",
+        "https://image-cdn.kazanexpress.ru/btlqqvqth9dbf3eks6hg/original.jpg",
+        "https://the-geek.ru/wp-content/uploads/2021/04/iphone_large.jpg"
+      ],
+      "id": 237
     }
   ],
   "categories": [
@@ -2647,6 +2659,18 @@
       "name": "clothes",
       "visibleName": "Одежда",
       "image": "https://api.lorem.space/image?w=640&h=480&r=5023"
+    },
+    {
+      "name": "eat",
+      "visibleName": "Еда",
+      "image": "https://kartinkin.net/uploads/posts/2021-07/1627425836_11-kartinkin-com-p-raznaya-yeda-yeda-krasivo-foto-13.jpg",
+      "id": 7
+    },
+    {
+      "name": "tickets",
+      "visibleName": "Билеты",
+      "image": "https://img1.teletype.in/files/47/47edd098-9d9a-4f55-99dc-200430612571.jpeg",
+      "id": 8
     }
   ],
   "users": [
@@ -2857,6 +2881,15 @@
             "img": "https://api.lorem.space/image/furniture?w=640&h=480&r=4053",
             "price": 17999,
             "col": 2
+          }
+        },
+        "Mon Oct 24 2022 15:38:57 GMT+0300 (Москва, стандартное время)": {
+          "0": {
+            "id": 237,
+            "title": "Iphone 14",
+            "img": "https://www.iguides.ru/upload/medialibrary/471/4719e79f32db53ea4db110217c00fcdf.jpeg",
+            "price": 76000,
+            "col": 1
           }
         }
       }

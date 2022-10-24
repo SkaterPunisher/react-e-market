@@ -15,7 +15,7 @@ const BasketPage = () => {
   if (isLoading) return <Spinner />;
 
   return (
-    <div>
+    <div className='p-6'>
       <h1 className='text-[30px] font-[700]'>Товары в корзине на сумму: {result.GeneralsumInBasket} ₽</h1>
       {result.basket.item?.map((item) => {
         const { id, title, price, img, col } = item;
