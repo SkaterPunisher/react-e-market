@@ -2633,7 +2633,7 @@
     {
       "id": 0,
       "name": "",
-      "visibleName": "Выберите категорию товаров",
+      "visibleName": "Категория",
       "image": ""
     },
     {
@@ -2671,24 +2671,6 @@
       "name": "clothes",
       "visibleName": "Одежда",
       "image": "https://api.lorem.space/image?w=640&h=480&r=5023"
-    },
-    {
-      "name": "eat",
-      "visibleName": "Еда",
-      "image": "https://kartinkin.net/uploads/posts/2021-07/1627425836_11-kartinkin-com-p-raznaya-yeda-yeda-krasivo-foto-13.jpg",
-      "id": 7
-    },
-    {
-      "name": "tickets",
-      "visibleName": "Билеты",
-      "image": "https://img1.teletype.in/files/47/47edd098-9d9a-4f55-99dc-200430612571.jpeg",
-      "id": 8
-    },
-    {
-      "name": "arts",
-      "visibleName": "Картины",
-      "image": "https://i.pinimg.com/originals/01/e5/a0/01e5a0b5b159f229fa975b6b704569b1.jpg",
-      "id": 9
     }
   ],
   "users": [
@@ -2700,24 +2682,9 @@
       "role": "customer",
       "avatar": "https://api.lorem.space/image/face?w=640&h=480&r=174",
       "basket": {
-        "item": [
-          {
-            "id": 10,
-            "title": "Small Concrete Cheese",
-            "img": "https://api.lorem.space/image?w=640&h=480&r=8265",
-            "price": 957,
-            "col": 1
-          },
-          {
-            "id": 9,
-            "title": "MackBook Pro 2019 Pro 16\"",
-            "img": "https://api.lorem.space/image/watch?w=640&h=480&r=2885",
-            "price": 149000,
-            "col": 1
-          }
-        ]
+        "item": []
       },
-      "GeneralsumInBasket": 149957,
+      "GeneralsumInBasket": 0,
       "history": {
         "Wed Oct 19 2022 14:47:27 GMT+0300 (Москва, стандартное время)": {
           "0": {
@@ -2854,6 +2821,31 @@
             "title": "Handmade Metal Pizza",
             "img": "https://api.lorem.space/image/watch?w=640&h=480&r=2885",
             "price": 793,
+            "col": 1
+          }
+        },
+        "Tue Oct 25 2022 15:03:13 GMT+0300 (Москва, стандартное время)": {
+          "0": {
+            "id": 8,
+            "title": "Luxury furniture",
+            "img": "https://api.lorem.space/image/furniture?w=640&h=480&r=4053",
+            "price": 19999,
+            "col": 10
+          },
+          "1": {
+            "id": 9,
+            "title": "MackBook Pro 2019 Pro 16\"",
+            "img": "https://api.lorem.space/image/watch?w=640&h=480&r=2885",
+            "price": 139999,
+            "col": 1
+          }
+        },
+        "Tue Oct 25 2022 15:03:53 GMT+0300 (Москва, стандартное время)": {
+          "0": {
+            "id": 237,
+            "title": "Iphone 14",
+            "img": "https://www.iguides.ru/upload/medialibrary/471/4719e79f32db53ea4db110217c00fcdf.jpeg",
+            "price": 76000,
             "col": 1
           }
         }
