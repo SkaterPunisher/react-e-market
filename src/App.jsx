@@ -4,6 +4,7 @@ import Privat from './hoc/Privat';
 import PrivatAdmin from './hoc/PrivatAdmin';
 import HomePage from './pages/HomePage';
 import { routes, customerRoutes, AdminRoutes } from './utils/routes';
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
   return (
@@ -12,13 +13,13 @@ function App() {
         <Route path='/' element={<Layout />}>
           <Route index element={<HomePage />} />
           {routes.map((item) => {
-            return <Route path={item.link} element={item.component} />;
+            return <Route key={uuidv4()} path={item.link} element={item.component} />;
           })}
           {customerRoutes.map((item) => {
-            return <Route path={item.link} element={<Privat>{item.component}</Privat>} />;
+            return <Route key={uuidv4()} path={item.link} element={<Privat>{item.component}</Privat>} />;
           })}
           {AdminRoutes.map((item) => {
-            return <Route path={item.link} element={<PrivatAdmin>{item.component}</PrivatAdmin>}/>;
+            return <Route key={uuidv4()} path={item.link} element={<PrivatAdmin>{item.component}</PrivatAdmin>}/>;
           })}
         </Route>
       </Routes>
