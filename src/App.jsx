@@ -10,6 +10,7 @@ import HomePage from './pages/HomePage';
 import LkPage from './pages/LkPage';
 import LoginPage from './pages/LoginPage';
 import NoteFoundPage from './pages/NoteFoundPage';
+import RegistrationPage from './pages/RegistrationPage';
 import SingleGoods from './pages/SingleGoods';
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
             }
           />
           <Route path='login' element={<LoginPage />} />
+          <Route path='registration' element={<RegistrationPage />} />
           <Route path='*' element={<NoteFoundPage />} />
         </Route>
       </Routes>

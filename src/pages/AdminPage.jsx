@@ -1,13 +1,10 @@
-import React from 'react';
 import { Route, Routes, useLocation } from 'react-router';
-import FormAddCategories from '../components/FormAddCategories/FormAddCategories';
-import FormAddGoods from '../components/FormAddGoods/FormAddGoods';
 import { Link } from 'react-router-dom';
-
+import FormAddCategories from '../components/AdminPage/FormAddCategories/FormAddCategories';
+import FormAddGoods from '../components/AdminPage/FormAddGoods/FormAddGoods';
 
 const AdminPage = () => {
   const location = useLocation();
-
 
   return (
     <div>

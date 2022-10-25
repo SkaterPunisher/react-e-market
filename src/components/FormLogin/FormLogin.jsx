@@ -1,23 +1,32 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import AddButton from '../../ui/Button/AddButton/AddButton';
+import InputText from '../../ui/Input/InputText';
 
 const FormLogin = ({ onSubmit }) => {
+  
   return (
-    <div className='flex justify-center flex-col items-center'>
-      <h1>Регистация и вход</h1>
+    <div className='flex justify-center flex-col items-center my-10'>
+      <h1 className='text-[20px]'>Вход</h1>
       <form
         onSubmit={onSubmit}
-        className=' px-6 py-4 flex flex-col bg-slate-100 max-w-[500px]'
+        className=' px-8 py-6 flex flex-col border-2 max-w-[500px]'
       >
-        <label>
-          Login: <input name='userName' />
-        </label>
-        <label>
-          Password: <input name='userPassword' />
-        </label>
-        <button type='submit'>Войти</button>
+        <InputText
+          labelName={'Login'}
+          name={'userName'}
+          placeholder={'Введите логин'}
+        />
+        <InputText
+          labelName={'Password'}
+          name={'userPassword'}
+          placeholder={'Введите пароль'}
+        />
+        <AddButton type={'submit'} text={'Войти'} />
       </form>
+      <p className='mt-4'>Если Вы еще не зарегестрированны - <Link to='/registration'>зарегестрируйтесь</Link></p>
     </div>
-  )
-}
+  );
+};
 
-export default FormLogin
+export default FormLogin;

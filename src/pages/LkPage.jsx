@@ -4,8 +4,8 @@ import Spinner from '../ui/Spinner/Spinner';
 import { useGetSingleUserQuery } from '../redux/goodsApi';
 import { Routes, Route, useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
-import AboutUser from '../components/AboutUser/AboutUser';
-import HistoryUser from '../components/HistoryUser/HistoryUser';
+import AboutUser from '../components/LkPage/AboutUser/AboutUser';
+import HistoryUser from '../components/LkPage/HistoryUser/HistoryUser';
 
 const LkPage = () => {
   const user = useSelector((state) => state.users.lkUser);

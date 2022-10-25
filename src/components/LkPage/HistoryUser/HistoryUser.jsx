@@ -1,7 +1,7 @@
 import { CaretRightOutlined } from '@ant-design/icons';
 import { Collapse } from 'antd';
 import React from 'react';
-import MainBasketItem from '../BasketItem/MainBasketItem/MainBasketItem';
+import MainBasketItem from '../../BasketItem/MainBasketItem/MainBasketItem';
 import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom';
 

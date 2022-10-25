@@ -2860,19 +2860,6 @@
       }
     },
     {
-      "id": 2,
-      "email": "maria@mail.com",
-      "password": "12345",
-      "name": "Maria",
-      "role": "customer",
-      "avatar": "https://api.lorem.space/image/face?w=640&h=480&r=4919",
-      "basket": {
-        "item": []
-      },
-      "GeneralsumInBasket": 0,
-      "history": {}
-    },
-    {
       "id": 3,
       "email": "admin@mail.com",
       "password": "admin123",
