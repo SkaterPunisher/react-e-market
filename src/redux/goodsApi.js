@@ -13,6 +13,7 @@ export const goodsApi = createApi({
   reducerPath: 'goodsApi',
   tagTypes: ['Goods', 'User', 'Categories'],
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3001/' }),
+  // baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3001/' }),
   endpoints: (build) => ({
     getGoods: build.query({
       query: (body) =>
