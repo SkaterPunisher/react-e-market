@@ -33,3 +33,15 @@ export const successAddGoods = () => {
 export const errorAddGoods = () => {
   message.error('Заполните все данные!', [1]);
 };
+export const successConfirm = () => {
+  message.success('Заказ успешно оформлен!', [1]);
+};
+export const successRemove = () => {
+  message.success('Товар успешно удален!', [1]);
+};
+export const successAdd = () => {
+  message.success('+1', [1]);
+};
+export const successChangeGoods = () => {
+  message.success('Товар отредактирован!', [1]);
+};

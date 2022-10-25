@@ -1,6 +1,5 @@
 import { Modal } from 'antd';
 import React, { useState } from 'react';
-import { message } from 'antd';
 import { v4 as uuidv4 } from 'uuid';
 import MainBasketItem from '../../../components/BasketItem/MainBasketItem/MainBasketItem';
 import {
@@ -9,15 +8,12 @@ import {
 } from '../../../redux/goodsApi';
 import Spinner from '../../Spinner/Spinner';
 import { useSelector } from 'react-redux';
+import { successConfirm } from '../../../list'
 
 const ConfirmDilivery = ({ result }) => {
   const user = useSelector((state) => state.users.lkUser);
   const [removeBasketItem] = useConfirmDiliveryBasketMutation();
   let { data = [], isLoading } = useGetSingleUserQuery(user.id);
-
-  const successAdd = () => {
-    message.success('Заказ успешно оформлен!', [1]);
-  };
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showModal = () => {
@@ -26,7 +22,7 @@ const ConfirmDilivery = ({ result }) => {
 
   const handleOk = async () => {
     setIsModalOpen(false);
-    successAdd();
+    successConfirm();
     let date = new Date();
     let userHistory = JSON.parse(JSON.stringify(data.history));
     userHistory[date] = { ...data.basket.item };

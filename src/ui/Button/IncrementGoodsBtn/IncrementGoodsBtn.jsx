@@ -1,6 +1,6 @@
-import React from 'react';
+
 import { MdAdd } from 'react-icons/md';
-import { message } from 'antd';
+import { successAdd } from '../../../list'
 import { useSelector } from 'react-redux';
 import {
   useGetSingleUserQuery,
@@ -9,9 +9,6 @@ import {
 import Spinner from '../../Spinner/Spinner';
 
 const IncrementGoodsBtn = ({ id }) => {
-  const successAdd = () => {
-    message.success('+1', [1]);
-  };
   const user = useSelector((state) => state.users.lkUser);
   let { data = [] } = useGetSingleUserQuery(user.id);
 

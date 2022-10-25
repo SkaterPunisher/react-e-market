@@ -1,6 +1,6 @@
-import React from 'react';
+
 import { MdClear } from 'react-icons/md';
-import { message } from 'antd';
+import { successRemove } from '../../../list'
 import { useSelector } from 'react-redux';
 import {
   useRemoveGoodsInBasketMutation,
@@ -9,9 +9,6 @@ import {
 import Spinner from '../../Spinner/Spinner';
 
 const RemoveGoodsBtn = ({ id }) => {
-  const successRemove = () => {
-    message.success('Товар успешно удален!', [1]);
-  };
   const user = useSelector((state) => state.users.lkUser);
   const { data = [], } = useGetSingleUserQuery(user.id);
 

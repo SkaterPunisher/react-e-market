@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router';
+import FormEdidGoods from '../components/SingleGoods/FormEdidGoods/FormEdidGoods';
 import GoBackBtn from '../ui/Button/GoBackBtn/GoBackBtn';
-
-import FormEdidGoods from '../components/FormEdidGoods/FormEdidGoods';
 
 const EditGoodPage = () => {
   const navigate = useNavigate();
