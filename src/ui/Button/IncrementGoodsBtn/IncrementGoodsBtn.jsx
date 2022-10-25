@@ -1,6 +1,6 @@
 
 import { MdAdd } from 'react-icons/md';
-import { successAdd } from '../../../list'
+import { successAdd } from '../../../utils/list'
 import { useSelector } from 'react-redux';
 import {
   useGetSingleUserQuery,

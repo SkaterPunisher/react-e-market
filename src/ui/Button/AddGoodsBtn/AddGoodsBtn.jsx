@@ -8,7 +8,7 @@ import {
   errorMessageLogin,
   successAddInBasket,
   alreadyInBasket,
-} from '../../../list';
+} from '../../../utils/list';
 import AddButton from '../AddButton/AddButton';
 
 const AddGoodsBtn = ({ text, id, goods }) => {

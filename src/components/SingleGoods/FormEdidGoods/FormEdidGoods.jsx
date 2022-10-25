@@ -1,5 +1,5 @@
 import AddButton from '../../../ui/Button/AddButton/AddButton';
-import { successChangeGoods } from '../../../list';
+import { successChangeGoods } from '../../../utils/list';
 import {
   useChangeSingleGoodsMutation,
   useGetSingleGoodsQuery,
