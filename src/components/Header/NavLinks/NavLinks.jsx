@@ -3,9 +3,13 @@ import { useSelector } from 'react-redux';
 import CustomLink from '../../CustomLink/CustomLink';
 import { MdMenu, MdClose } from 'react-icons/md';
 
+import { useTranslation } from 'react-i18next';
+import '../../../utiles/i18next.js'
+
 const NavLinks = () => {
   const auth = useSelector((state) => state.users.auth);
   const [visible, setVisible] = useState(false);
+  const { t } = useTranslation()
 
   return (
     <>
@@ -29,16 +33,16 @@ const NavLinks = () => {
             E-commerce
           </div>
           <div className='flex flex-col mt-8'>
-            <CustomLink to='/'>Главная</CustomLink>
-            <CustomLink to='/goods'>Товары</CustomLink>
-            {auth ? <CustomLink to='/admin'>Админка</CustomLink> : ''}
+            <CustomLink to='/'>{t("header.main")}</CustomLink>
+            <CustomLink to='/goods'>{t("header.goods")}</CustomLink>
+            {auth ? <CustomLink to='/admin'>{t("header.admin")}</CustomLink> : ''}
           </div>
         </div>
       </div>
       <div className='hidden sm:block'>
-        <CustomLink to='/'>Главная</CustomLink>
-        <CustomLink to='/goods'>Товары</CustomLink>
-        {auth ? <CustomLink to='/admin'>Админка</CustomLink> : ''}
+        <CustomLink to='/'>{t("header.main")}</CustomLink>
+        <CustomLink to='/goods'>{t("header.goods")}</CustomLink>
+        {auth ? <CustomLink to='/admin'>{t("header.admin")}</CustomLink> : ''}
       </div>
     </>
   );
