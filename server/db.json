@@ -15,7 +15,7 @@
     {
       "id": 9,
       "title": "MackBook Pro 2019 Pro 16\"",
-      "price": 139999,
+      "price": 99999,
       "description": "Крутейший ноут для крутейших программистов",
       "category": "electronics",
       "images": [
@@ -2627,6 +2627,18 @@
         "https://www.meleon.ru/upload/iblock/cd7/4-_1_.jpg"
       ],
       "id": 238
+    },
+    {
+      "title": "Пицца",
+      "price": 899,
+      "description": "Вкуснейшая пицца",
+      "category": "eat",
+      "images": [
+        "https://braun-russia.ru/image/cache/data/products/oralb/mickey-pc500/mickey500-3-1000x1000.jpg",
+        "https://www.ochkov.net/wiki/storage/app/media/1./luchshie-elektricheskie-zvukovye-zubnye-shetki/1.jpg",
+        "https://www.ochkov.net/wiki/storage/app/media/1./luchshie-elektricheskie-zvukovye-zubnye-shetki/1.jpg"
+      ],
+      "id": 239
     }
   ],
   "categories": [
@@ -2671,6 +2683,12 @@
       "name": "clothes",
       "visibleName": "Одежда",
       "image": "https://api.lorem.space/image?w=640&h=480&r=5023"
+    },
+    {
+      "name": "eat",
+      "visibleName": "Еда",
+      "image": "https://kartinkin.net/uploads/posts/2021-07/1627425836_11-kartinkin-com-p-raznaya-yeda-yeda-krasivo-foto-13.jpg",
+      "id": 7
     }
   ],
   "users": [
@@ -2848,6 +2866,22 @@
             "price": 76000,
             "col": 1
           }
+        },
+        "Tue Oct 25 2022 15:26:54 GMT+0300 (Москва, стандартное время)": {
+          "0": {
+            "id": 10,
+            "title": "Small Concrete Cheese",
+            "img": "https://api.lorem.space/image?w=640&h=480&r=8265",
+            "price": 957,
+            "col": 1
+          },
+          "1": {
+            "id": 9,
+            "title": "MackBook Pro 2019 Pro 16\"",
+            "img": "https://api.lorem.space/image/watch?w=640&h=480&r=2885",
+            "price": 139999,
+            "col": 1
+          }
         }
       }
     },
@@ -2927,6 +2961,29 @@
         }
       },
       "id": 4,
+      "GeneralsumInBasket": 0
+    },
+    {
+      "email": "фывфывфыв",
+      "password": "123123",
+      "name": "artem",
+      "role": "customer",
+      "avatar": "https://shapka-youtube.ru/wp-content/uploads/2020/08/man-silhouette.jpg",
+      "basket": {
+        "item": []
+      },
+      "history": {
+        "Tue Oct 25 2022 15:31:58 GMT+0300 (Москва, стандартное время)": {
+          "0": {
+            "id": 239,
+            "title": "Пицца",
+            "img": "https://braun-russia.ru/image/cache/data/products/oralb/mickey-pc500/mickey500-3-1000x1000.jpg",
+            "price": 899,
+            "col": 4
+          }
+        }
+      },
+      "id": 5,
       "GeneralsumInBasket": 0
     }
   ]
