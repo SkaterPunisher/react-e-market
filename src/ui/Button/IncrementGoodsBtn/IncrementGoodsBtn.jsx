@@ -38,7 +38,7 @@ const IncrementGoodsBtn = ({ id }) => {
   return (
     <button
       onClick={handleIncrementColGoodsInBasket}
-      className='mr-6 border-2 p-2 rounded-3xl bg-gray-200 hover:bg-gray-400 hover:text-white duration-200'
+      className='mr-6 p-2 rounded-3xl bg-gray-200 hover:bg-gray-400 hover:text-white duration-200'
     >
       <MdAdd />
     </button>

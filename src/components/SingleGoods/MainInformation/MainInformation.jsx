@@ -9,10 +9,10 @@ const MainInformation = ({ title, description, price, id, data }) => {
 
   return (
     <div className='px-8 py-6 flex flex-col justify-center'>
-      <h2 className='text-[40px] text-center'>{title}</h2>
-      <h2>{description}</h2>
+      <h2 className='text-[40px] text-center dark:text-white'>{title}</h2>
+      <h2 className='dark:text-white'>{description}</h2>
       <div className=''>
-        <h2 className='text-[30px]'>{price} ₽</h2>
+        <h2 className='text-[30px] dark:text-white'>{price} ₽</h2>
         <AddGoodsBtn text={'Добавить в корзину'} id={id} goods={data} />
         {auth ? (
           <Link to={`/goods/${id}/edit`} state={{ id: id }} className='flex items-center mt-10'>

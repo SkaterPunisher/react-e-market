@@ -2923,8 +2923,19 @@
       "basket": {
         "item": []
       },
-      "history": {},
-      "id": 4
+      "history": {
+        "Tue Oct 25 2022 12:25:27 GMT+0300 (Москва, стандартное время)": {
+          "0": {
+            "id": 9,
+            "title": "MackBook Pro 2019 Pro 16\"",
+            "img": "https://api.lorem.space/image/watch?w=640&h=480&r=2885",
+            "price": 139999,
+            "col": 5
+          }
+        }
+      },
+      "id": 4,
+      "GeneralsumInBasket": 0
     }
   ]
 }

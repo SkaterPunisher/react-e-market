@@ -3,12 +3,15 @@ import { MdWbSunny, MdDarkMode } from 'react-icons/md';
 
 const SwitchTheme = () => {
   let html = document.querySelector('html');
+  let body = document.querySelector('body');
   const [theme, setTheme] = useState(false);
   const switchTheme = () => {
     setTheme(!theme);
     if (html.classList.contains('dark')) {
       html.classList.remove('dark');
+      body.classList.remove('darkBody')
     } else {
+      body.classList.add('darkBody')
       html.classList.add('dark');
     }
   };

@@ -44,7 +44,7 @@ const ConfirmDilivery = ({ result }) => {
     <>
       <button
         onClick={showModal}
-        className='border-2 px-6 py-1 mb-4 rounded-3xl hover:bg-slate-200 duration-200'
+        className='border-2 dark:text-white px-6 py-1 mb-4 rounded-3xl hover:bg-gray-200 dark:hover:bg-gray-400 dark:hover:border-gray-400 duration-200'
       >
         Оформить заказ
       </button>
@@ -78,7 +78,7 @@ const ConfirmDilivery = ({ result }) => {
             </div>
           );
         })}
-        <h2 className='mt-10'>Итого: {result.GeneralsumInBasket}</h2>
+        <h2 className='mt-10 '>Итого: {result.GeneralsumInBasket}</h2>
       </Modal>
     </>
   );

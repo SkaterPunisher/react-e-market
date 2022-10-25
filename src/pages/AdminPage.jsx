@@ -8,7 +8,7 @@ const AdminPage = () => {
 
   return (
     <div>
-      <h2 className='text-[50px] font-[700] text-center'>Администрирование</h2>
+      <h2 className='text-[50px] font-[700] text-center dark:text-white'>Администрирование</h2>
 
       <div className='flex flex-col'>
         <ul className='px-6 py-2 h-full flex justify-start'>

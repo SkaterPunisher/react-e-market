@@ -59,7 +59,7 @@ const FormAddGoods = () => {
 
   return (
     <div className='flex flex-col items-center'>
-      <div className='mb-6 text-[20px]'>Форма для добавления товара</div>
+      <div className='mb-6 text-[20px] dark:text-white'>Форма для добавления товара</div>
       <form
         onSubmit={handleAddGoods}
         className='flex flex-col max-w-[500px] border-2 p-6'
@@ -83,7 +83,7 @@ const FormAddGoods = () => {
           placeholder={'Введите описание товара'}
         />
         <label className='mb-2'>
-          Категория товара:
+          <span className='dark:text-white'>Категория товара:</span> 
           <select
             name='category'
             className='px-6 py-4 bg-slate-100 w-full rounded-full'
@@ -97,15 +97,15 @@ const FormAddGoods = () => {
             })}
           </select>
         </label>
-        <label className='mb-2'>
-          Изображения товара:
+        <label className='mb-2 '>
+          <span className='dark:text-white'>Изображения товара:</span>
           {img?.map((item) => {
             return (
               <input
                 key={uuidv4()}
                 type='text'
                 name={`img${item}`}
-                className='w-full bg-slate-100 px-6 py-2 rounded-full mb-2'
+                className='w-full bg-slate-100 px-6 py-2 rounded-full mb-2 '
                 placeholder='URL изображения'
               />
             );

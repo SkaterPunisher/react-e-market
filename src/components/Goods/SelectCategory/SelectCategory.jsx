@@ -19,11 +19,11 @@ const SelectCategory = () => {
   if (isLoading) return <Spinner />;
 
   return (
-    <div className='ml-10 flex items-center border-4 w-fit rounded-full pr-6 overflow-hidden'>
+    <div className='flex items-center overflow-hidden'>
       <select
         name='category'
         onChange={handleChange}
-        className='px-6 py-4 bg-slate-100'
+        className='px-6 py-4 bg-slate-100 ml-10 w-fit rounded-l-full pr-6'
       >
         {data?.map((item) => {
           return (

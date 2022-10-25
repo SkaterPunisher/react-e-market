@@ -3,7 +3,7 @@ import React from 'react'
 const InputText = ({ labelName, type, name, placeholder }) => {
   return (
     <label className='mb-2'>
-          {labelName}:
+          <span className='dark:text-white'>{labelName}:</span>
           <input
             type={type}
             name={name}

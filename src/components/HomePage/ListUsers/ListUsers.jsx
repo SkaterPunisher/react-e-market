@@ -15,11 +15,12 @@ const ListUsers = () => {
 
   return (
     <div className='my-10'>
-      <h2 className='text-center text-[20px]'>
+      <h2 className='text-center text-[20px] dark:text-white'>
         Вы можете <Link to='/login'>войти</Link> в профиль под уже готовым профилем или <Link to='/registration'>создать
         собственный</Link> 
       </h2>
       <Collapse
+      style={{backGround: 'black'}}
         key={uuidv4()}
         bordered={true}
         defaultActiveKey={['0']}

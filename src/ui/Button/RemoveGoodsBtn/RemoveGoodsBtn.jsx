@@ -32,7 +32,7 @@ const RemoveGoodsBtn = ({ id }) => {
   return (
     <button
       onClick={handleRemoveGoodsOnBasket}
-      className='border-2 p-2 rounded-3xl bg-red-200 hover:bg-red-400 hover:text-white duration-200'
+      className='p-2 rounded-3xl bg-red-200 hover:bg-red-400 hover:text-white duration-200'
     >
       <MdClear />
     </button>

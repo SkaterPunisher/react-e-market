@@ -2,7 +2,7 @@ import React from 'react';
 
 const Description = () => {
   return (
-    <p className='text-[18px]'>
+    <p className='text-[18px] dark:text-white'>
       Интернет магазин "E-commerce" - построен полностью на запросах.
       <br />- Реализована корзина товаров, сортировка товаров по категориям,
       поиск по названию.

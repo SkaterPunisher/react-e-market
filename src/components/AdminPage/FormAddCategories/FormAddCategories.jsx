@@ -32,7 +32,7 @@ const FormAddCategories = () => {
 
   return (
     <div className='flex flex-col items-center'>
-      <div className='mb-6 text-[20px]'>Форма для добавление категории</div>
+      <div className='mb-6 text-[20px] dark:text-white'>Форма для добавление категории</div>
       <form
         onSubmit={handleAddCategories}
         className='flex flex-col max-w-[500px] border-2 p-6'

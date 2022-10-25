@@ -16,7 +16,7 @@ const LkPage = () => {
 
   return (
     <div>
-      <div className='text-[40px] text-center'>
+      <div className='text-[40px] text-center dark:text-white'>
         Добро пожаловать {data.name} !
       </div>
       <div className='flex flex-col'>
