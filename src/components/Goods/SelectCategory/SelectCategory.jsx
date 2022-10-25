@@ -19,11 +19,11 @@ const SelectCategory = () => {
   if (isLoading) return <Spinner />;
 
   return (
-    <div className='flex items-center overflow-hidden'>
+    <div className='flex items-center overflow-hidden px-6'>
       <select
         name='category'
         onChange={handleChange}
-        className='px-6 py-4 bg-slate-100 ml-10 w-fit rounded-l-full pr-6'
+        className='px-6 py-4 bg-slate-100 sm:ml-10 w-fit rounded-l-full pr-6'
       >
         {data?.map((item) => {
           return (
@@ -33,7 +33,7 @@ const SelectCategory = () => {
           );
         })}
       </select>
-      <h1 className='m-0 ml-6 uppercase text-[15px] text-gray-400'>{categories.length > 0 ? categories : 'All goods'}</h1>
+      <h1 className='m-0 ml-6 uppercase text-[12px] sm:text-[15px] text-gray-400'>{categories.length > 0 ? categories : 'All goods'}</h1>
     </div>
   );
 };

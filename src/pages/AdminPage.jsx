@@ -8,12 +8,12 @@ const AdminPage = () => {
 
   return (
     <div>
-      <h2 className='text-[50px] font-[700] text-center dark:text-white'>Администрирование</h2>
+      <h2 className='mt-4 text-[25px] sm:text-[50px] font-[700] text-center dark:text-white'>Администрирование</h2>
 
       <div className='flex flex-col'>
-        <ul className='px-6 py-2 h-full flex justify-start'>
+        <ul className='px-6 py-2 h-full flex sm:flex-row flex-col justify-start'>
           <li
-            className={`${
+            className={`mb-4 sm:mb-0 ${
               location.pathname === '/admin/addGoods'
                 ? 'bg-gray-900 text-white text-[20px] px-4 py-2 rounded-lg mx-2 w-fit'
                 : 'bg-gray-600 text-gray-300 text-[20px] hover:bg-gray-900 hover:text-white px-4 py-2 rounded-lg mx-2 w-fit'

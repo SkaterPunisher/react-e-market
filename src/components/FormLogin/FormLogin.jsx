@@ -6,7 +6,7 @@ import InputText from '../../ui/Input/InputText';
 const FormLogin = ({ onSubmit }) => {
   
   return (
-    <div className='flex justify-center flex-col items-center my-10'>
+    <div className='flex justify-center flex-col items-center my-10 px-4'>
       <h1 className='text-[20px]'>Вход</h1>
       <form
         onSubmit={onSubmit}
