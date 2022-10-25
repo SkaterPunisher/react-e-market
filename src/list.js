@@ -45,3 +45,15 @@ export const successAdd = () => {
 export const successChangeGoods = () => {
   message.success('Товар отредактирован!', [1]);
 };
+export const successMessageAdmin = () => {
+  message.success('Вы пошли как администратор', [1]);
+};
+export const successMessageCustomer = () => {
+  message.success('Вы пошли как пользователь', [1]);
+};
+export const errorMessage = () => {
+  message.error('Введите коректный логин и пароль или зарегестрирустесь', [1]);
+};
+export const errorUserLogIn = () => {
+  message.error('Сначала нужный выйти из профиля, чтобы зайти в новый', [1]);
+};

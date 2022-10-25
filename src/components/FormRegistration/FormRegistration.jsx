@@ -1,12 +1,43 @@
 import React from 'react';
 import InputText from '../../ui/Input/InputText';
 import AddButton from '../../ui/Button/AddButton/AddButton';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { errorAddGoods } from '../../list';
+import { useAddUserMutation } from '../../redux/goodsApi';
+import Spinner from '../../ui/Spinner/Spinner';
 
 const FormRegistration = () => {
-  const onSubmit = (e) => {
-    e.preventDefault();
+  const navigate = useNavigate();
+  const [addUser, { isLoading }] = useAddUserMutation();
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    let email = event.target.email.value;
+    let login = event.target.login.value;
+    let password = event.target.userPassword.value;
+    let avatar = event.target.avatar.value;
+    let role = event.target.role.value;
+    if (
+      email == '' ||
+      login == '' ||
+      password == '' ||
+      avatar == '' ||
+      role == ''
+    ) {
+      errorAddGoods();
+    } else {
+      await addUser({
+        email: email,
+        password: password,
+        name: login,
+        role: role,
+        avatar: avatar,
+      }).unwrap();
+      navigate('/login');
+    }
   };
+
+  if (isLoading) return <Spinner />;
 
   return (
     <div className='flex justify-center flex-col items-center my-10'>
@@ -35,7 +66,8 @@ const FormRegistration = () => {
           name={'avatar'}
           placeholder={'Загрузите URL аватара'}
         />
-        <label>Тип пользователя
+        <label>
+          Тип пользователя
           <select
             name='role'
             className='w-full bg-slate-100 px-6 py-3 rounded-full mb-2'
@@ -46,7 +78,9 @@ const FormRegistration = () => {
         </label>
         <AddButton type={'submit'} text={'Зарегестрироваться'} />
       </form>
-      <p className='mt-4'>Если Вы уже зарегестрированны - <Link to='/login'>войдите</Link></p>
+      <p className='mt-4'>
+        Если Вы уже зарегестрированны - <Link to='/login'>войдите</Link>
+      </p>
     </div>
   );
 };

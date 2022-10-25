@@ -2913,6 +2913,18 @@
           }
         }
       }
+    },
+    {
+      "email": "skaterpunisher@gmail.com",
+      "password": "1234321",
+      "name": "skaterpunisher",
+      "role": "admin",
+      "avatar": "https://shapka-youtube.ru/wp-content/uploads/2020/08/man-silhouette.jpg",
+      "basket": {
+        "item": []
+      },
+      "history": {},
+      "id": 4
     }
   ]
 }
