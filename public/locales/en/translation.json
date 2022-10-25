@@ -1,0 +1,10 @@
+{
+    "home": {
+        "title": "You are Welcome"
+    },
+    "header": {
+        "main": "Main",
+        "goods": "Goods",
+        "admin": "Admin"
+    }
+}

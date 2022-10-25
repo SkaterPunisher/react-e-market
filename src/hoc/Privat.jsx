@@ -10,7 +10,7 @@ const Privat = ({ children }) => {
   if (auth === false && authCustomer === false) {
     return <Navigate to='/login' state={{ from: location }} />;
   }
-
+ 
   return children;
 };
 

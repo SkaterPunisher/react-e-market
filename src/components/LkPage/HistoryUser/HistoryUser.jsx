@@ -1,7 +1,7 @@
 import { CaretRightOutlined } from '@ant-design/icons';
 import { Collapse } from 'antd';
 import React from 'react';
-import MainBasketItem from '../BasketItem/MainBasketItem/MainBasketItem';
+import MainBasketItem from '../../BasketItem/MainBasketItem/MainBasketItem';
 import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom';
 
@@ -11,7 +11,7 @@ const HistoryUser = ({ data }) => {
   const { history } = data;
   const arrHistory = Object.entries(history);
 
-  if (arrHistory.length == 0) return <div className='text-center text-[25px]'>Истории заказов пока нет. <Link to='/goods' className='text-blue-600'>Перейти к товарам</Link></div>;
+  if (arrHistory.length == 0) return <div className='text-center text-[25px] dark:text-white'>Истории заказов пока нет. <Link to='/goods' className='text-blue-600'>Перейти к товарам</Link></div>;
 
   return (
     <div className=''>

@@ -15,7 +15,7 @@
     {
       "id": 9,
       "title": "MackBook Pro 2019 Pro 16\"",
-      "price": 149000,
+      "price": 139999,
       "description": "Крутейший ноут для крутейших программистов",
       "category": "electronics",
       "images": [
@@ -2615,13 +2615,25 @@
         "https://the-geek.ru/wp-content/uploads/2021/04/iphone_large.jpg"
       ],
       "id": 237
+    },
+    {
+      "title": "Bosh W-132",
+      "price": 8999,
+      "description": "Электрическая зубная щетка",
+      "category": "electronics",
+      "images": [
+        "https://braun-russia.ru/image/cache/data/products/oralb/mickey-pc500/mickey500-3-1000x1000.jpg",
+        "https://www.ochkov.net/wiki/storage/app/media/1./luchshie-elektricheskie-zvukovye-zubnye-shetki/1.jpg",
+        "https://www.meleon.ru/upload/iblock/cd7/4-_1_.jpg"
+      ],
+      "id": 238
     }
   ],
   "categories": [
     {
       "id": 0,
       "name": "",
-      "visibleName": "Выберите категорию товаров",
+      "visibleName": "Категория",
       "image": ""
     },
     {
@@ -2671,6 +2683,12 @@
       "visibleName": "Билеты",
       "image": "https://img1.teletype.in/files/47/47edd098-9d9a-4f55-99dc-200430612571.jpeg",
       "id": 8
+    },
+    {
+      "name": "arts",
+      "visibleName": "Картины",
+      "image": "https://i.pinimg.com/originals/01/e5/a0/01e5a0b5b159f229fa975b6b704569b1.jpg",
+      "id": 9
     }
   ],
   "users": [
@@ -2682,9 +2700,24 @@
       "role": "customer",
       "avatar": "https://api.lorem.space/image/face?w=640&h=480&r=174",
       "basket": {
-        "item": []
+        "item": [
+          {
+            "id": 10,
+            "title": "Small Concrete Cheese",
+            "img": "https://api.lorem.space/image?w=640&h=480&r=8265",
+            "price": 957,
+            "col": 1
+          },
+          {
+            "id": 9,
+            "title": "MackBook Pro 2019 Pro 16\"",
+            "img": "https://api.lorem.space/image/watch?w=640&h=480&r=2885",
+            "price": 149000,
+            "col": 1
+          }
+        ]
       },
-      "GeneralsumInBasket": 0,
+      "GeneralsumInBasket": 149957,
       "history": {
         "Wed Oct 19 2022 14:47:27 GMT+0300 (Москва, стандартное время)": {
           "0": {
@@ -2827,19 +2860,6 @@
       }
     },
     {
-      "id": 2,
-      "email": "maria@mail.com",
-      "password": "12345",
-      "name": "Maria",
-      "role": "customer",
-      "avatar": "https://api.lorem.space/image/face?w=640&h=480&r=4919",
-      "basket": {
-        "item": []
-      },
-      "GeneralsumInBasket": 0,
-      "history": {}
-    },
-    {
       "id": 3,
       "email": "admin@mail.com",
       "password": "admin123",
@@ -2893,6 +2913,29 @@
           }
         }
       }
+    },
+    {
+      "email": "skaterpunisher@gmail.com",
+      "password": "1234321",
+      "name": "skaterpunisher",
+      "role": "admin",
+      "avatar": "https://shapka-youtube.ru/wp-content/uploads/2020/08/man-silhouette.jpg",
+      "basket": {
+        "item": []
+      },
+      "history": {
+        "Tue Oct 25 2022 12:25:27 GMT+0300 (Москва, стандартное время)": {
+          "0": {
+            "id": 9,
+            "title": "MackBook Pro 2019 Pro 16\"",
+            "img": "https://api.lorem.space/image/watch?w=640&h=480&r=2885",
+            "price": 139999,
+            "col": 5
+          }
+        }
+      },
+      "id": 4,
+      "GeneralsumInBasket": 0
     }
   ]
 }

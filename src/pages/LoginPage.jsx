@@ -1,20 +1,27 @@
-
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router';
 import {
   logInAdmin,
   logInCustomer,
 } from '../redux/features/initialUsers/initialUsersSlice';
-import { message } from 'antd';
 import Spinner from '../ui/Spinner/Spinner';
 import { useGetUsersQuery } from '../redux/goodsApi';
 import FormLogin from '../components/FormLogin/FormLogin';
+import {
+  successMessageAdmin,
+  successMessageCustomer,
+  errorMessage,
+} from '../list';
+import { errorUserLogIn } from '../list'
 
 const LoginPage = () => {
   const { data = [], isLoading } = useGetUsersQuery();
   const navigate = useNavigate();
-  const location = useLocation(); 
+  const location = useLocation();
   const dispatch = useDispatch();
+
+  const auth = useSelector((state) => state.users.auth);
+  const authCustomer = useSelector((state) => state.users.authCustomer);
 
   const users = data;
 
@@ -26,32 +33,26 @@ const LoginPage = () => {
     const login = form.userName.value;
     const password = form.userPassword.value;
 
-    const successMessageAdmin = () => {
-      message.success('Вы пошли как администратор', [1]);
-    };
-    const successMessageCustomer = () => {
-      message.success('Вы пошли как пользователь', [1]);
-    };
-    const errorMessage = () => {
-      message.error('Введите коректный логин и пароль или зарегестрирустесь', [1]);
-    };
-
     let user = users.find(
       (item) => item.password === password && item.name === login
     );
-    if (user != undefined) {
-      if (user.role === 'customer') {
-        successMessageCustomer()
-        dispatch(logInCustomer(user));
-        navigate(fromPage);
-      }
-      if (user.role === 'admin') {
-        successMessageAdmin()
-        dispatch(logInAdmin(user));
-        navigate(fromPage);
-      }
+    if (auth === true || authCustomer === true) {
+      errorUserLogIn()
     } else {
-      errorMessage()
+      if (user != undefined) {
+        if (user.role === 'customer') {
+          successMessageCustomer();
+          dispatch(logInCustomer(user));
+          navigate(fromPage);
+        }
+        if (user.role === 'admin') {
+          successMessageAdmin();
+          dispatch(logInAdmin(user));
+          navigate(fromPage);
+        }
+      } else {
+        errorMessage();
+      }
     }
   };
 
@@ -59,9 +60,7 @@ const LoginPage = () => {
     return <Spinner />;
   }
 
-  return (
-    <FormLogin onSubmit={handleSubmit} />
-  );
+  return <FormLogin onSubmit={handleSubmit} />;
 };
 
 export default LoginPage;

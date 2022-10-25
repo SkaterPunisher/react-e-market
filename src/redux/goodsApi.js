@@ -15,14 +15,17 @@ export const goodsApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3001/' }),
   endpoints: (build) => ({
     getGoods: build.query({
-      query: (body) => body.search == '' ? `/products?category_like=${body.category}&_start=0&_end=${body.limit}` : `/products?title_like=${body.search}`,
+      query: (body) =>
+        body.search == ''
+          ? `/products?category_like=${body.category}&_start=0&_end=${body.limit}`
+          : `/products?title_like=${body.search}`,
       providesTags: (result) => providesList(result, 'Goods'),
     }),
 
     getSingleGoods: build.query({
       query: (id) => `/products/${id}`,
       providesTags: (result) =>
-      result ? [result, { type: 'Goods' }] : [{ type: 'Goods' }],
+        result ? [result, { type: 'Goods' }] : [{ type: 'Goods' }],
     }),
 
     changeSingleGoods: build.mutation({
@@ -32,7 +35,7 @@ export const goodsApi = createApi({
         body: {
           title: body.newTitle,
           price: body.newPrice,
-          description: body.newDescription
+          description: body.newDescription,
         },
       }),
       invalidatesTags: [{ type: 'Goods' }],
@@ -65,7 +68,7 @@ export const goodsApi = createApi({
         body: {
           name: body.name,
           visibleName: body.visibleName,
-          image: body.image
+          image: body.image,
         },
       }),
       invalidatesTags: [{ type: 'Categories' }],
@@ -80,6 +83,26 @@ export const goodsApi = createApi({
       query: (id) => `/users/${id}`,
       providesTags: (result) =>
         result ? [result, { type: 'User' }] : [{ type: 'User' }],
+    }),
+
+    addUser: build.mutation({
+      query: (body) => ({
+        url: `/users`,
+        method: 'POST',
+        body: {
+          email: body.email,
+          password: body.password,
+          name: body.name,
+          role: body.role,
+          avatar: body.avatar,
+          basket: {
+            item: []
+          },
+          history: {}
+        },
+      }),
+      // invalidatesTags: (result, error, arg) => [{type: 'User', id: arg.id}]
+      invalidatesTags: [{ type: 'User' }],
     }),
 
     addGoodsInBasket: build.mutation({
@@ -155,4 +178,5 @@ export const {
   useChangeSingleGoodsMutation,
   useAddCategoriesMutation,
   useAddGoodsMutation,
+  useAddUserMutation,
 } = goodsApi;

@@ -1,5 +1,5 @@
 import { MdRemove } from 'react-icons/md';
-import { message } from 'antd';
+import { successRemove } from '../../../list'
 import { useSelector } from 'react-redux';
 import {
   useGetSingleUserQuery,
@@ -9,9 +9,6 @@ import {
 import Spinner from '../../Spinner/Spinner';
 
 const DecrementGoodsBtn = ({ id }) => {
-  const successRemove = () => {
-    message.success('Товар успешно удален!', [1]);
-  };
   const user = useSelector((state) => state.users.lkUser);
   let { data = [] } = useGetSingleUserQuery(user.id);
 
@@ -34,7 +31,6 @@ const DecrementGoodsBtn = ({ id }) => {
 
       let generalSum = data.GeneralsumInBasket - targetGoods.price;
       successRemove();
-
       await addProductInBasket({
         idUser: user.id,
         item: newBasketUser,
@@ -43,8 +39,7 @@ const DecrementGoodsBtn = ({ id }) => {
     } else {
       let result = data.basket.item.filter((item) => item.id != id);
       let targetGoods = data.basket.item.filter((item) => item.id == id);
-      let sum =
-        data.GeneralsumInBasket - targetGoods[0].price * targetGoods[0].col;
+      let sum = data.GeneralsumInBasket - targetGoods[0].price * targetGoods[0].col;
       successRemove();
       await RemoveProductInBasket({
         id: data.id,
@@ -59,7 +54,7 @@ const DecrementGoodsBtn = ({ id }) => {
   return (
     <button
       onClick={handleDecrementColGoodsInBasket}
-      className='mr-2 border-2 p-2 rounded-3xl bg-gray-200 hover:bg-gray-400 hover:text-white duration-200'
+      className='mr-2 p-2 rounded-3xl bg-gray-200 hover:bg-gray-400 hover:text-white duration-200'
     >
       <MdRemove />
     </button>

@@ -1,6 +1,6 @@
-import React from 'react';
+
 import { MdAdd } from 'react-icons/md';
-import { message } from 'antd';
+import { successAdd } from '../../../list'
 import { useSelector } from 'react-redux';
 import {
   useGetSingleUserQuery,
@@ -9,9 +9,6 @@ import {
 import Spinner from '../../Spinner/Spinner';
 
 const IncrementGoodsBtn = ({ id }) => {
-  const successAdd = () => {
-    message.success('+1', [1]);
-  };
   const user = useSelector((state) => state.users.lkUser);
   let { data = [] } = useGetSingleUserQuery(user.id);
 
@@ -41,7 +38,7 @@ const IncrementGoodsBtn = ({ id }) => {
   return (
     <button
       onClick={handleIncrementColGoodsInBasket}
-      className='mr-6 border-2 p-2 rounded-3xl bg-gray-200 hover:bg-gray-400 hover:text-white duration-200'
+      className='mr-6 p-2 rounded-3xl bg-gray-200 hover:bg-gray-400 hover:text-white duration-200'
     >
       <MdAdd />
     </button>

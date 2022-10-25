@@ -1,6 +1,5 @@
 import { Modal } from 'antd';
 import React, { useState } from 'react';
-import { message } from 'antd';
 import { v4 as uuidv4 } from 'uuid';
 import MainBasketItem from '../../../components/BasketItem/MainBasketItem/MainBasketItem';
 import {
@@ -9,15 +8,12 @@ import {
 } from '../../../redux/goodsApi';
 import Spinner from '../../Spinner/Spinner';
 import { useSelector } from 'react-redux';
+import { successConfirm } from '../../../list'
 
 const ConfirmDilivery = ({ result }) => {
   const user = useSelector((state) => state.users.lkUser);
   const [removeBasketItem] = useConfirmDiliveryBasketMutation();
   let { data = [], isLoading } = useGetSingleUserQuery(user.id);
-
-  const successAdd = () => {
-    message.success('Заказ успешно оформлен!', [1]);
-  };
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showModal = () => {
@@ -26,7 +22,7 @@ const ConfirmDilivery = ({ result }) => {
 
   const handleOk = async () => {
     setIsModalOpen(false);
-    successAdd();
+    successConfirm();
     let date = new Date();
     let userHistory = JSON.parse(JSON.stringify(data.history));
     userHistory[date] = { ...data.basket.item };
@@ -48,7 +44,7 @@ const ConfirmDilivery = ({ result }) => {
     <>
       <button
         onClick={showModal}
-        className='border-2 px-6 py-1 mb-4 rounded-3xl hover:bg-slate-200 duration-200'
+        className='border-2 dark:text-white px-6 py-1 mb-4 rounded-3xl hover:bg-gray-200 dark:hover:bg-gray-400 dark:hover:border-gray-400 duration-200'
       >
         Оформить заказ
       </button>
@@ -82,7 +78,7 @@ const ConfirmDilivery = ({ result }) => {
             </div>
           );
         })}
-        <h2 className='mt-10'>Итого: {result.GeneralsumInBasket}</h2>
+        <h2 className='mt-10 '>Итого: {result.GeneralsumInBasket}</h2>
       </Modal>
     </>
   );

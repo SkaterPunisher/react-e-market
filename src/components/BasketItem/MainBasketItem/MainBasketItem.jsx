@@ -16,8 +16,8 @@ const MainBasketItem = ({ id, title, price, img }) => {
           className='h-[100px] w-[100px] object-cover mr-10'
         />
         <div>
-          <h2>{title}</h2>
-          <h2>{price} ₽</h2>
+          <h2 className='dark:text-white'>{title}</h2>
+          <h2 className='dark:text-white'>{price} ₽</h2>
         </div>
       </div>
     </Link>

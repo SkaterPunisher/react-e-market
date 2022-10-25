@@ -2,8 +2,8 @@
   "products": [
     {
       "id": 8,
-      "title": "Generic Granite Chicken",
-      "price": 20000,
+      "title": "Luxury furniture",
+      "price": 19999,
       "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
       "category": "furniture",
       "images": [
@@ -14,9 +14,9 @@
     },
     {
       "id": 9,
-      "title": "Handmade Metal Pizza",
-      "price": 793,
-      "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+      "title": "MackBook Pro 2019 Pro 16\"",
+      "price": 139999,
+      "description": "Крутейший ноут для крутейших программистов",
       "category": "electronics",
       "images": [
         "https://api.lorem.space/image/watch?w=640&h=480&r=2885",
@@ -710,8 +710,8 @@
     },
     {
       "id": 69,
-      "title": "Awesome Metal Mouse",
-      "price": 476,
+      "title": "Apple watch SE",
+      "price": 23999,
       "description": "The Football Is Good For Training And Recreational Purposes",
       "category": "others",
       "images": [
@@ -2603,6 +2603,30 @@
       "variables": {},
       "query": "query IntrospectionQuery {\n  __schema {\n    queryType {\n      name\n    }\n    mutationType {\n      name\n    }\n    subscriptionType {\n      name\n    }\n    types {\n      ...FullType\n    }\n    directives {\n      name\n      description\n      locations\n      args {\n        ...InputValue\n      }\n    }\n  }\n}\n\nfragment FullType on __Type {\n  kind\n  name\n  description\n  fields(includeDeprecated: true) {\n    name\n    description\n    args {\n      ...InputValue\n    }\n    type {\n      ...TypeRef\n    }\n    isDeprecated\n    deprecationReason\n  }\n  inputFields {\n    ...InputValue\n  }\n  interfaces {\n    ...TypeRef\n  }\n  enumValues(includeDeprecated: true) {\n    name\n    description\n    isDeprecated\n    deprecationReason\n  }\n  possibleTypes {\n    ...TypeRef\n  }\n}\n\nfragment InputValue on __InputValue {\n  name\n  description\n  type {\n    ...TypeRef\n  }\n  defaultValue\n}\n\nfragment TypeRef on __Type {\n  kind\n  name\n  ofType {\n    kind\n    name\n    ofType {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}\n",
       "id": 236
+    },
+    {
+      "title": "Iphone 14",
+      "price": 76000,
+      "description": "Модель 2020 года",
+      "category": "electronics",
+      "images": [
+        "https://www.iguides.ru/upload/medialibrary/471/4719e79f32db53ea4db110217c00fcdf.jpeg",
+        "https://image-cdn.kazanexpress.ru/btlqqvqth9dbf3eks6hg/original.jpg",
+        "https://the-geek.ru/wp-content/uploads/2021/04/iphone_large.jpg"
+      ],
+      "id": 237
+    },
+    {
+      "title": "Bosh W-132",
+      "price": 8999,
+      "description": "Электрическая зубная щетка",
+      "category": "electronics",
+      "images": [
+        "https://braun-russia.ru/image/cache/data/products/oralb/mickey-pc500/mickey500-3-1000x1000.jpg",
+        "https://www.ochkov.net/wiki/storage/app/media/1./luchshie-elektricheskie-zvukovye-zubnye-shetki/1.jpg",
+        "https://www.meleon.ru/upload/iblock/cd7/4-_1_.jpg"
+      ],
+      "id": 238
     }
   ],
   "categories": [
@@ -2647,6 +2671,24 @@
       "name": "clothes",
       "visibleName": "Одежда",
       "image": "https://api.lorem.space/image?w=640&h=480&r=5023"
+    },
+    {
+      "name": "eat",
+      "visibleName": "Еда",
+      "image": "https://kartinkin.net/uploads/posts/2021-07/1627425836_11-kartinkin-com-p-raznaya-yeda-yeda-krasivo-foto-13.jpg",
+      "id": 7
+    },
+    {
+      "name": "tickets",
+      "visibleName": "Билеты",
+      "image": "https://img1.teletype.in/files/47/47edd098-9d9a-4f55-99dc-200430612571.jpeg",
+      "id": 8
+    },
+    {
+      "name": "arts",
+      "visibleName": "Картины",
+      "image": "https://i.pinimg.com/originals/01/e5/a0/01e5a0b5b159f229fa975b6b704569b1.jpg",
+      "id": 9
     }
   ],
   "users": [
@@ -2660,22 +2702,22 @@
       "basket": {
         "item": [
           {
-            "id": 26,
-            "title": "Small Rubber Shoes",
-            "img": "https://api.lorem.space/image/shoes?w=640&h=480&r=3919",
-            "price": 541,
+            "id": 10,
+            "title": "Small Concrete Cheese",
+            "img": "https://api.lorem.space/image?w=640&h=480&r=8265",
+            "price": 957,
             "col": 1
           },
           {
-            "id": 25,
-            "title": "Small Plastic Keyboard",
-            "img": "https://api.lorem.space/image/shoes?w=640&h=480&r=1139",
-            "price": 889,
+            "id": 9,
+            "title": "MackBook Pro 2019 Pro 16\"",
+            "img": "https://api.lorem.space/image/watch?w=640&h=480&r=2885",
+            "price": 149000,
             "col": 1
           }
         ]
       },
-      "GeneralsumInBasket": 1430,
+      "GeneralsumInBasket": 149957,
       "history": {
         "Wed Oct 19 2022 14:47:27 GMT+0300 (Москва, стандартное время)": {
           "0": {
@@ -2818,19 +2860,6 @@
       }
     },
     {
-      "id": 2,
-      "email": "maria@mail.com",
-      "password": "12345",
-      "name": "Maria",
-      "role": "customer",
-      "avatar": "https://api.lorem.space/image/face?w=640&h=480&r=4919",
-      "basket": {
-        "item": []
-      },
-      "GeneralsumInBasket": 0,
-      "history": {}
-    },
-    {
       "id": 3,
       "email": "admin@mail.com",
       "password": "admin123",
@@ -2864,8 +2893,49 @@
             "price": 20000,
             "col": 4
           }
+        },
+        "Sat Oct 22 2022 10:54:31 GMT+0300 (Москва, стандартное время)": {
+          "0": {
+            "id": 8,
+            "title": "Generic Granite Chicken",
+            "img": "https://api.lorem.space/image/furniture?w=640&h=480&r=4053",
+            "price": 17999,
+            "col": 2
+          }
+        },
+        "Mon Oct 24 2022 15:38:57 GMT+0300 (Москва, стандартное время)": {
+          "0": {
+            "id": 237,
+            "title": "Iphone 14",
+            "img": "https://www.iguides.ru/upload/medialibrary/471/4719e79f32db53ea4db110217c00fcdf.jpeg",
+            "price": 76000,
+            "col": 1
+          }
         }
       }
+    },
+    {
+      "email": "skaterpunisher@gmail.com",
+      "password": "1234321",
+      "name": "skaterpunisher",
+      "role": "admin",
+      "avatar": "https://shapka-youtube.ru/wp-content/uploads/2020/08/man-silhouette.jpg",
+      "basket": {
+        "item": []
+      },
+      "history": {
+        "Tue Oct 25 2022 12:25:27 GMT+0300 (Москва, стандартное время)": {
+          "0": {
+            "id": 9,
+            "title": "MackBook Pro 2019 Pro 16\"",
+            "img": "https://api.lorem.space/image/watch?w=640&h=480&r=2885",
+            "price": 139999,
+            "col": 5
+          }
+        }
+      },
+      "id": 4,
+      "GeneralsumInBasket": 0
     }
   ]
 }
