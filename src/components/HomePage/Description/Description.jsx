@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import '../../../utiles/i18next'
+import '../../../utils/i18next'
 
 const Description = () => {
   const { t } = useTranslation()

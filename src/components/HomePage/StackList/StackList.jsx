@@ -1,5 +1,5 @@
 
-import { list } from '../../../list'
+import { list } from '../../../utils/list'
 import { v4 as uuidv4 } from 'uuid';
 
 const StackList = () => {

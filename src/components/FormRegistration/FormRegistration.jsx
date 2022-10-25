@@ -2,7 +2,7 @@ import React from 'react';
 import InputText from '../../ui/Input/InputText';
 import AddButton from '../../ui/Button/AddButton/AddButton';
 import { Link, useNavigate } from 'react-router-dom';
-import { errorAddGoods } from '../../list';
+import { errorAddGoods } from '../../utils/list';
 import { useAddUserMutation } from '../../redux/goodsApi';
 import Spinner from '../../ui/Spinner/Spinner';
 

@@ -1,5 +1,5 @@
 import { MdRemove } from 'react-icons/md';
-import { successRemove } from '../../../list'
+import { successRemove } from '../../../utils/list'
 import { useSelector } from 'react-redux';
 import {
   useGetSingleUserQuery,

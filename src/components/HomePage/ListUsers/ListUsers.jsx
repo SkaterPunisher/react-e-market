@@ -7,7 +7,7 @@ import Spinner from '../../../ui/Spinner/Spinner';
 import { useGetUsersQuery } from '../../../redux/goodsApi'
 
 import { useTranslation } from 'react-i18next';
-import '../../../utiles/i18next'
+import '../../../utils/i18next'
 
 const { Panel } = Collapse;
 

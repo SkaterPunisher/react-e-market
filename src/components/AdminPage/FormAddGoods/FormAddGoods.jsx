@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useAddGoodsMutation, useGetCategoryQuery } from '../../../redux/goodsApi';
 import { v4 as uuidv4 } from 'uuid';
 import Spinner from '../../../ui/Spinner/Spinner';
-import { successAddGoods, errorAddGoods } from '../../../list';
+import { successAddGoods, errorAddGoods } from '../../../utils/list';
 import AddButton from '../../../ui/Button/AddButton/AddButton';
 import InputText from '../../../ui/Input/InputText';
 

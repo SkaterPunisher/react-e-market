@@ -11,8 +11,8 @@ import {
   successMessageAdmin,
   successMessageCustomer,
   errorMessage,
-} from '../list';
-import { errorUserLogIn } from '../list'
+  errorUserLogIn
+} from '../utils/list';
 
 const LoginPage = () => {
   const { data = [], isLoading } = useGetUsersQuery();

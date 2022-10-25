@@ -2,16 +2,8 @@ import { Routes, Route } from 'react-router';
 import { Layout } from './components/Layout/Layout';
 import Privat from './hoc/Privat';
 import PrivatAdmin from './hoc/PrivatAdmin';
-import AdminPage from './pages/AdminPage';
-import BasketPage from './pages/BasketPage';
-import EditGoodPage from './pages/EditGoodPage';
-import GoodsPage from './pages/GoodsPage';
 import HomePage from './pages/HomePage';
-import LkPage from './pages/LkPage';
-import LoginPage from './pages/LoginPage';
-import NoteFoundPage from './pages/NoteFoundPage';
-import RegistrationPage from './pages/RegistrationPage';
-import SingleGoods from './pages/SingleGoods';
+import { routes, customerRoutes, AdminRoutes } from './utils/routes';
 
 function App() {
   return (
@@ -19,45 +11,15 @@ function App() {
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path='goods' element={<GoodsPage />} />
-          <Route path='goods/:id' element={<SingleGoods />} />
-          <Route
-            path='goods/:id/edit'
-            element={
-              <PrivatAdmin>
-                <EditGoodPage />
-              </PrivatAdmin>
-            }
-          />
-          <Route
-            path='admin/*'
-            element={
-              <PrivatAdmin>
-                <AdminPage />
-              </PrivatAdmin>
-            }
-          />
-          <Route
-            path='basket'
-            element={
-              <Privat>
-                {' '}
-                <BasketPage />{' '}
-              </Privat>
-            }
-          />
-
-          <Route
-            path='lk/*'
-            element={
-              <Privat>
-                <LkPage />
-              </Privat>
-            }
-          />
-          <Route path='login' element={<LoginPage />} />
-          <Route path='registration' element={<RegistrationPage />} />
-          <Route path='*' element={<NoteFoundPage />} />
+          {routes.map((item) => {
+            return <Route path={item.link} element={item.component} />;
+          })}
+          {customerRoutes.map((item) => {
+            return <Route path={item.link} element={<Privat>{item.component}</Privat>} />;
+          })}
+          {AdminRoutes.map((item) => {
+            return <Route path={item.link} element={<PrivatAdmin>{item.component}</PrivatAdmin>}/>;
+          })}
         </Route>
       </Routes>
     </>

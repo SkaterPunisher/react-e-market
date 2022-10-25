@@ -1,9 +1,13 @@
-import React from 'react';
+
 import { useDispatch } from 'react-redux';
 import { searchName } from '../../../redux/features/initialGoods/initialGoodsSlice';
 
+import { useTranslation } from 'react-i18next';
+import '../../../utils/list';
+
 const SearchTitle = () => {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const handleSearch = (e) => {
     if (e.keyCode === 13) {
@@ -19,7 +23,7 @@ const SearchTitle = () => {
       <input
         onKeyUp={handleSearch}
         className='bg-gray-100 w-[90%] px-6 py-2 rounded-full mt-2 mb-4'
-        placeholder='Поиск товара по названию'
+        placeholder={t('goods.search')}
       />
     </div>
   );

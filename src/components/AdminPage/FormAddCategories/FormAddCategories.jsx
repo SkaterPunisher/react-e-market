@@ -1,7 +1,7 @@
 import { useAddCategoriesMutation } from '../../../redux/goodsApi';
 import Spinner from '../../../ui/Spinner/Spinner';
 import AddButton from '../../../ui/Button/AddButton/AddButton';
-import { successAddCategories, errorAddCategories } from '../../../list';
+import { successAddCategories, errorAddCategories } from '../../../utils/list';
 import InputText from '../../../ui/Input/InputText';
 
 const FormAddCategories = () => {

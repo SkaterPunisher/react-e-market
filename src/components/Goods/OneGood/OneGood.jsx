@@ -4,8 +4,12 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import AddGoodsBtn from '../../../ui/Button/AddGoodsBtn/AddGoodsBtn';
 
+import { useTranslation } from 'react-i18next';
+import '../../../utils/list';
+
 const OneGood = ({ data }) => {
   const user = useSelector((state) => state.users.lkUser);
+  const { t } = useTranslation();
 
   return (
     <div className='p-4 flex flex-wrap gap-4 justify-center '>
@@ -27,7 +31,7 @@ const OneGood = ({ data }) => {
                   {price} <span className='m-0'>₽</span>
                 </h2>
 
-                <AddGoodsBtn text={'Добавить'} id={id} goods={item} />
+                <AddGoodsBtn text={t('button.addBasket')} id={id} goods={item} />
               </div>
             </div>
           </div>

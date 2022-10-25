@@ -8,7 +8,7 @@ import {
 } from '../../../redux/goodsApi';
 import Spinner from '../../Spinner/Spinner';
 import { useSelector } from 'react-redux';
-import { successConfirm } from '../../../list'
+import { successConfirm } from '../../../utils/list'
 
 const ConfirmDilivery = ({ result }) => {
   const user = useSelector((state) => state.users.lkUser);

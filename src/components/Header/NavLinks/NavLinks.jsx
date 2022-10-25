@@ -4,7 +4,7 @@ import CustomLink from '../../CustomLink/CustomLink';
 import { MdMenu, MdClose } from 'react-icons/md';
 
 import { useTranslation } from 'react-i18next';
-import '../../../utiles/i18next.js'
+import '../../../utils/i18next.js'
 
 const NavLinks = () => {
   const auth = useSelector((state) => state.users.auth);
