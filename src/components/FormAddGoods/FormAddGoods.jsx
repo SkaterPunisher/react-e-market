@@ -1,28 +1,18 @@
 import React, { useState } from 'react';
 import { useAddGoodsMutation, useGetCategoryQuery } from '../../redux/goodsApi';
 import { v4 as uuidv4 } from 'uuid';
-import { message } from 'antd';
 import Spinner from '../../ui/Spinner/Spinner';
+import { successAddGoods, errorAddGoods } from '../../list';
+import AddButton from '../../ui/Button/AddButton/AddButton';
+import InputText from '../../ui/Input/InputText';
 
 const FormAddGoods = () => {
   const [addGoods, isLoading] = useAddGoodsMutation();
-
-  const successAdd = () => {
-    message.success('Товар добавлен!', [1]);
-  };
-  const errorAdd = () => {
-    message.error('Заполните все данные!', [1]);
-  };
 
   const { data = [] } = useGetCategoryQuery();
   let allCategories = data.slice(2);
 
   const [img, setImg] = useState([1, 2, 3]);
-
-  // const addImages = (e) => {
-  //   setImg((prev) => prev.push(1))
-  //   console.log(img)
-  // }
 
   const handleAddGoods = async (e) => {
     e.preventDefault();
@@ -43,9 +33,9 @@ const FormAddGoods = () => {
       img2 === '' ||
       img3 === ''
     ) {
-      errorAdd();
+      errorAddGoods();
     } else {
-      successAdd();
+      successAddGoods();
       let images = [];
       images.push(img1, img2, img3);
       await addGoods({
@@ -74,35 +64,26 @@ const FormAddGoods = () => {
         onSubmit={handleAddGoods}
         className='flex flex-col max-w-[500px] border-2 p-6'
       >
+        <InputText
+          labelName={'Название товара'}
+          type={'text'}
+          name={'title'}
+          placeholder={'Введите название товара'}
+        />
+        <InputText
+          labelName={'Стоимость товара'}
+          type={'number'}
+          name={'price'}
+          placeholder={'Введите стоимость числом в рублях'}
+        />
+        <InputText
+          labelName={'Описание товара'}
+          type={'text'}
+          name={'description'}
+          placeholder={'Введите описание товара'}
+        />
         <label className='mb-2'>
-          НАЗВАНИЕ:
-          <input
-            type='text'
-            name='title'
-            className='w-full bg-slate-100 px-6 py-2 rounded-full'
-            placeholder='Введите название товара'
-          />
-        </label>
-        <label className='mb-2'>
-          СТОИМОСТЬ:
-          <input
-            type='number'
-            name='price'
-            className='w-full bg-slate-100 px-6 py-2 rounded-full'
-            placeholder='Введите стоимость числом в рублях'
-          />
-        </label>
-        <label className='mb-2'>
-          ОПИСАНИЕ:
-          <input
-            type='text'
-            name='description'
-            className='w-full bg-slate-100 px-6 py-2 rounded-full'
-            placeholder='Описание товара'
-          />
-        </label>
-        <label className='mb-2'>
-          КАТЕГОРИЯ:
+          Категория товара:
           <select
             name='category'
             className='px-6 py-4 bg-slate-100 w-full rounded-full'
@@ -117,7 +98,7 @@ const FormAddGoods = () => {
           </select>
         </label>
         <label className='mb-2'>
-          ИЗОБРАЖЕНИЯ:
+          Изображения товара:
           {img?.map((item) => {
             return (
               <input
@@ -129,16 +110,8 @@ const FormAddGoods = () => {
               />
             );
           })}
-          {/* <button
-            onClick={addImages}
-            className='bg-green-300 px-6 py-2 rounded-full'
-          >
-            Добавить изображение
-          </button> */}
         </label>
-        <button className='bg-green-300 px-6 py-2 rounded-full'>
-          Добавить
-        </button>
+        <AddButton text={'Добавить товар'} />
       </form>
     </div>
   );

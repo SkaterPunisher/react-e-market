@@ -2,21 +2,10 @@ import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useGetUsersQuery } from '../redux/goodsApi';
 import Spinner from '../ui/Spinner/Spinner';
+import { list } from '../list'
 
 const HomePage = () => {
   const { data = [], isLoading } = useGetUsersQuery();
-
-  const list = [
-    'React',
-    'Redux-toolkit',
-    'TRK-query',
-    'Redux-persist',
-    'React-router-dom',
-    'JSON Server',
-    'AntDesign',
-    'Tailwind CSS',
-    'JavaScript',
-  ];
 
   if (isLoading) return <Spinner />;
 
