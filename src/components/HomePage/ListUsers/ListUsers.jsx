@@ -6,18 +6,21 @@ import { Link } from 'react-router-dom';
 import Spinner from '../../../ui/Spinner/Spinner';
 import { useGetUsersQuery } from '../../../redux/goodsApi'
 
+import { useTranslation } from 'react-i18next';
+import '../../../utiles/i18next'
+
 const { Panel } = Collapse;
 
 const ListUsers = () => {
   const { data = [], isLoading } = useGetUsersQuery();
+  const { t } = useTranslation()
 
   if (isLoading) return <Spinner />;
 
   return (
     <div className='my-10'>
       <h2 className='text-center text-[20px] dark:text-white'>
-        Вы можете <Link to='/login'>войти</Link> в профиль под уже готовым профилем или <Link to='/registration'>создать
-        собственный</Link> 
+        {t('home.user1')} <Link to='/login'>{t('home.user2')}</Link> {t('home.user3')} <Link to='/registration'>{t('home.user4')}</Link> 
       </h2>
       <Collapse
       style={{backGround: 'black'}}
@@ -30,7 +33,7 @@ const ListUsers = () => {
         className='site-collapse-custom-collapse'
       >
         <Panel
-          header='Список пользователей'
+          header={t('home.userList')}
           key='1'
           className='site-collapse-custom-panel'
         >
