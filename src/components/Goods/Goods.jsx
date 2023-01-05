@@ -1,7 +1,7 @@
 import Spinner from '../../ui/Spinner/Spinner';
 import MoreGoodsBtn from '../../ui/Button/MoreGoodsBtn/MoreGoodsBtn';
 import OneGood from './OneGood/OneGood';
-import { useGetGoodsQuery, useSearchGoodsQuery } from '../../redux/goodsApi';
+import { useGetGoodsQuery } from '../../redux/goodsApi';
 import { useSelector } from 'react-redux';
 import SelectCategory from './SelectCategory/SelectCategory';
 import SearchTitle from './SearchTitle/SearchTitle';
